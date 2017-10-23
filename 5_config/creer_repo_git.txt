@@ -1,3 +1,7 @@
+sur un terminal (shell):
+    => lancer: git config --global user.name "John Doe"
+    => lancer: git config --global user.email johndoe@example.com
+
 sur github:
     => cliquer sur le bouton new pour ...
     => créer un nouveau repository (dossier distant)

@@ -1,0 +1,18 @@
+sur github:
+    => cliquer sur le bouton new pour ...
+    => créer un nouveau repository (dossier distant)
+    => copier l'url du dossier fournie
+
+sur le disque dur du PC:
+    => se placer dans le dossier souhaité
+    => ouvrir un terminal (shell)
+    => lancer l'instruction git init
+    => puis lier le dossier local au dossier distant :
+        => git remote add origin <url-copiée-précédement>
+
+ajouter des fichiers et pousser sur le repo distant
+    => touch test.txt
+    => git add . (ajoute le contenu du dossier courant)
+    => git status (vérifie le status du dossier local)
+    => git commit -m "premier commit" (ajoute un point de sauvegarde)
+    => git push origin master (pousse les modifications sur la branche principale du repo distant)

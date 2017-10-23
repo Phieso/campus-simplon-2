@@ -7,11 +7,11 @@ var jeSuisGlobale = "et c'est pas top ...";
     /* ci-dessous : on a oublié le mot clé var => la variable est donc globale, accessible par window.jeSuisEgalementGlobale */
     jeSuisEgalementGlobale = "et c'est la loose";
     /* la ligne ci-dessous lève une erreur. dans la console, on aura pour indiquation de la provenance de l'erreur : anonymous function */
-    // console.log(choubidou);
+    //=>// console.log(choubidou);
 }());
 
 (function jeNeSuisPasAnonyme() {
     // cette IIFE est nommée =>
     /* la ligne ci-dessous lève une erreur. on saura dans la console du nom de la fonction ayant généré cette erreur (jeNeSuisPasAnonyme) */
-    // console.log(choubidou);
+    console.log(choubidou);
 }());

@@ -1,0 +1,24 @@
+créer un dossier entrainement 4 =>
+    1 index.html
+    1 app.js
+
+Lier les deux fichiers
+
+dans index.html =>
+    créer une page simple =>
+        header#main_header
+        nav#main_nav
+        aside#sidebar
+        main#main_content
+        footer#main_footer
+
+dans app.js =>
+    rédiger une IIFE (function entrainement4() {}());
+    attendre l'évènement load =>
+        window.onload = function() {}
+        log un message dans la console une fois la page chargée
+        si tout est ok =>
+            créer autant de variables que d'élements HTML
+            récupérer les élements dans les var (getElementById)
+            afficher chaque id dans la console
+            bonus => afficher chaque id dans l'élément HTML main

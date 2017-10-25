@@ -1,0 +1,166 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+*:not(ul) {
+    padding: 0;
+}
+
+body {
+    font-family: Avenir;
+    font-size: 16px;
+}
+
+.border {
+    box-shadow: 2px 0 0 0 #888,
+        0 2px 0 0 #888,
+        2px 2px 0 0 #888,   /* Just to fix the corner */
+        2px 0 0 0 #888 inset,
+        0 2px 0 0 #888 inset;
+    padding: 10px;
+}
+
+#logo,
+#utility {
+    vertical-align: top;
+    display: inline-block;
+}
+
+#logo {
+    display: inline-block;
+    width: calc(52% - 20px);
+}
+
+#logo .title, #logo .icon {
+    display: inline-block;
+    vertical-align: top;
+}
+
+#logo .icon {
+    color: #bd68bd;
+    font-size: 4rem;
+    line-height: 4rem;
+    font-weight: bold;
+}
+
+#logo .title .main {
+    font-size: 1.1rem;
+    border-bottom: 2px solid;
+}
+
+#logo .title .second {
+    margin-top: 3px;
+    font-size: .9rem;
+}
+
+#logo .title .last {
+    font-size: .8rem;
+}
+
+#utility {
+    width: calc(48% - 20px);
+}
+
+#utility > * {
+    width: 100%;
+}
+
+#nav_main,
+#search {
+    height: 25px;
+    line-height: 25px;
+    padding: 0 0 0 10px;
+    font-size: .9rem;
+}
+
+#nav_main {
+    margin-bottom: 10px;
+}
+
+#search {
+    border: none;
+}
+
+#sidebar,
+#page {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 0;
+}
+
+#sidebar > *,
+#page > * {
+    font-size: 1rem;
+}
+
+#sidebar {
+    padding-top: 50px;
+    width: calc(30% - 4px);
+}
+
+#service_options {
+    margin-bottom: 20px;
+}
+
+#blank_1 {
+    margin-bottom: 20px;
+    height: 120px;
+}
+
+#page {
+    width: calc(70% - 4px);
+}
+
+#content {
+    padding: 0 20px 20px;
+}
+
+#content .title.secondary {
+    font-size: 1.2rem;
+}
+
+#content .title.main {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+
+#nav_ariane {
+    margin-bottom: 20px;
+    border-bottom: 2px solid #888;
+    padding: 10px;
+}
+
+#nav_ariane .list {
+    padding-left: 0;
+}
+
+#nav_ariane .item {
+    display: inline;
+}
+
+#nav_ariane .item:not(:last-of-type)::after {
+    content: ">";
+}
+
+#blank_2, #blank_3 {
+    display: inline-block;
+    vertical-align: top;
+    height: 300px;
+}
+
+#blank_2 {
+    font-size: 0;
+    width: calc(67% - 20px);
+    margin-right: 20px;
+}
+
+#blank_3 {
+    font-size: 0;
+    width: 30%;
+}
+
+#footer {
+    height: 80px;
+}

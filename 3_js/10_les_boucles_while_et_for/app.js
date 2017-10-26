@@ -1,7 +1,7 @@
 /*jshint esversion: 6*/
 var app = (function () {
 
-    var list;
+    var list, selected, selectedAll;
 
     function lancerUneBoucleWhileInfinie() {
         return alert("NOOOOOOOO !");
@@ -43,13 +43,36 @@ var app = (function () {
         console.log("fin de boucle");
     }
 
+    function lancerUneBoucleFor() {
+        var i,
+        monTableau = ['a', 'b', 'c', 'd'];
+
+        for (i = 0; i < monTableau.length; i += 1) {
+            console.log( 'itération n°' + (i + 1) + ' -> la case contient : ' + monTableau[i] );
+            /* on affiche successivement le contenu de chaque case de monTableau dans la console */
+        }
+    }
+
+    function selectorEtSelectorAll() {
+        selected = document.querySelector(".title");
+        selectedAll = document.querySelectorAll("li");
+        var i = 0;
+        while(i < selectedAll.length) {
+            console.log(selectedAll[i]);
+            i += 1;
+        }
+        console.log(selected);
+        console.log(selectedAll);
+    }
     window.onload = function() {
         console.log("doc loaded !!!");
         list = document.getElementById("todo_list");
         // console.log(list.children);
         // lancerUneBoucleWhileInfinie();
         // lancerUneBoucleWhile();
-        parcourirListeWhile();
+        // parcourirListeWhile();
+        // selectorEtSelectorAll();
+        lancerUneBoucleFor();
     };
 
 }());

@@ -51,7 +51,7 @@
     </ul>
     <h2 class="title">TD 1 : parcourir liste avec While</h2>
     <p>
-        Dans une IIFE, au load de la page =><br>
+        Dans une <span class="now">IIFE</span>, au load de la page =><br>
         Rédiger une fonction parcourirListe.<br>
 
         Avec une boucle <b>while</b> : afficher dans la console à chaque tour de boucle :<br>
@@ -60,6 +60,18 @@
         <b>Si</b> le contenu est <b>strictement égal</b> à "pause repas", lancer une alert("miam !");
     </p>
     <hr>
+    <p>
+        Petit rappel sur le nom des symboles utilisés
+    </p>
+    <ul>
+        <li>parenthèses : ( )</li>
+        <li>chevrons : < > </li>
+        <li>crochets : [ ] </li>
+        <li>accolades : { } </li>
+    </ul>
+    <hr>
+    <!-- snippet pour emmet -->
+    <!-- ul#todo_list_loops>li.learn.now*4+li.learn.later*3 -->
     <ol id="todo_list_loops">
         <li class="learn now">apprendre while</li>
         <li class="learn now">document.querySelector</li>
@@ -70,14 +82,15 @@
         <li class="learn later">apprendre forEach</li>
     </ol>
     <hr>
-    <h2 class="title">TD 1 : parcourir liste avec for</h2>
-    <p>
+    <h2 class="title">TD 2 : parcourir liste avec for</h2>
+    <p style="margin-bottom: 200px;">
         Rédiger une fonction parcourirListeFor.<br>
-        Utiliser document.querySelectorAll pour sélectionner tous les li portant la classe CSS "learn".
+        Avec <b>document.querySelectorAll</b>, sélectionner les li portant la classe CSS "learn" et les affecter à une var.<br>
         Les parcourir avec une boucle for.<br>
         Afficher l'objet li dans la console<br>
+        <br>
         Si un li porte la classe "now", afficher la longueur de son contenu textuel dans la console.<br>
-        Pour savoir si un élement contient une classe CSS, utiliser l'api classList (voir MDN).
+        Pour savoir si un élement contient une classe CSS, accéder à sa propriété className <b>OU</b> utiliser l'api classList (voir MDN).
     </p>
 </body>
 </html>

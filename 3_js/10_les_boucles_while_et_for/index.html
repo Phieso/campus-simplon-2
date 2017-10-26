@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS - Boucles while &amp; for</title>
+    <script src="app.js"></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            padding: 10px;
+            max-width: 400px;
+            justify-content: center;
+            border-radius: .1rem;
+        }
+
+        .learn {
+            font-weight: bold;
+        }
+
+        .learn.now {
+            color: darkorange;
+            font-weight: bold;
+        }
+
+        .learn.later {
+            color: forestgreen;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">JS - Les boucles while et for</h1>
+    <ul id="todo_list">
+        <li>boire thé</li>
+        <li>faire révision</li>
+        <li>commencer boucle</li>
+        <li>while</li>
+        <li>pause</li>
+        <li>application / td</li>
+        <li>pause repas</li>
+        <li>querySelector / querySelectorAll</li>
+        <li>for</li>
+        <li>application / td</li>
+    </ul>
+    <h2 class="title">TD 1 : parcourir liste avec While</h2>
+    <p>
+        Dans une IIFE, au load de la page =><br>
+        Rédiger une fonction parcourirListe.<br>
+
+        Avec une boucle <b>while</b> : afficher dans la console à chaque tour de boucle :<br>
+        chaque element li et son contenu textuel avec <b>
+        element.textContent</b>.<br>
+        <b>Si</b> le contenu est <b>strictement égal</b> à "pause repas", lancer une alert("miam !");
+    </p>
+    <hr>
+    <ol id="todo_list_loops">
+        <li class="learn now">apprendre while</li>
+        <li class="learn now">document.querySelector</li>
+        <li class="learn now">document.querySelectorAll</li>
+        <li class="learn now">apprendre for</li>
+        <li class="learn later">apprendre doWhile</li>
+        <li class="learn later">apprendre for...in</li>
+        <li class="learn later">apprendre forEach</li>
+    </ol>
+    <hr>
+    <h2 class="title">TD 1 : parcourir liste avec for</h2>
+    <p>
+        Rédiger une fonction parcourirListeFor.<br>
+        Utiliser document.querySelectorAll pour sélectionner tous les li portant la classe CSS "learn".
+        Les parcourir avec une boucle for.<br>
+        Afficher l'objet li dans la console<br>
+        Si un li porte la classe "now", afficher la longueur de son contenu textuel dans la console.<br>
+        Pour savoir si un élement contient une classe CSS, utiliser l'api classList (voir MDN).
+    </p>
+</body>
+</html>

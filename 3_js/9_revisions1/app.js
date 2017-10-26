@@ -1,8 +1,11 @@
+/*jshint esversion: 6*/
+
+var f = function () {
+    alert("hellow");
+};
+
 var revisions1 = (function () {
-    "use strict";
-
     console.log("hello simplon !");
-
     var user = {
         name: null,
         age: null,
@@ -26,6 +29,8 @@ var revisions1 = (function () {
         user.hobbies.push(h);
     }
 
+
+
     function setName(n) {
         user.name = n;
     }
@@ -33,11 +38,16 @@ var revisions1 = (function () {
     window.onload = function() {
         console.log("document chargé à 100%");
         console.log("----------------------");
-        var list = document.getElementById("todo_list");
+        var i, list = document.getElementById("todo_list");
         console.log("objet représentant la liste => ");
         console.log(list);
         console.log("enfants (children) de la liste => ");
         console.log(list.children);
+
+        // prochain chapitre => les boucles !!! (loops)
+        for (i = 0; i < list.children.length; i += 1) {
+            console.log(list.children[i]);
+        }
     };
 
     return {
@@ -46,5 +56,4 @@ var revisions1 = (function () {
         setName: setName,
         setHobbie: setHobbie
     };
-
 }());

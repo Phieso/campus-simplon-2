@@ -11,6 +11,33 @@ var app = (function () {
         }
     }
 
+    function parcourirListeFor(sCSS) {
+        var i, liste = document.querySelectorAll(sCSS);
+        console.log(liste);
+        // liste contient tous les nodes HTML (objets) sélectionnés
+
+        for (i = 0; i < liste.length; i += 1) {
+            // console.log(i); // numéro de la case
+            // console.log(liste[i]); // contenu de la case (un objet représentant chaque li, tour à tour)
+
+            /* technique 1 avec className => */
+
+            // if (liste[i].className === "learn now") {
+            //     console.log("ici");
+            //     console.log(liste[i].textContent.length);
+            // }
+
+            /* technique 2 avec classList => */
+
+            if (liste[i].classList.contains("now")) {
+                console.log("ici aussi");
+                liste[i].classList.add("parcouru");
+                console.log(liste[i].textContent.length);
+            }
+        }
+    }
+
+
     function lancerUneBoucleWhile() {
         var compteur = 1;
         while(compteur <= 1000) {
@@ -64,6 +91,7 @@ var app = (function () {
         console.log(selected);
         console.log(selectedAll);
     }
+
     window.onload = function() {
         console.log("doc loaded !!!");
         list = document.getElementById("todo_list");
@@ -73,6 +101,9 @@ var app = (function () {
         // parcourirListeWhile();
         // selectorEtSelectorAll();
         lancerUneBoucleFor();
+        parcourirListeFor(".learn");
+        // parcourirListeFor("li");
+        // parcourirListeFor("*");
     };
 
 }());

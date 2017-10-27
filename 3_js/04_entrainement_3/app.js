@@ -1,3 +1,4 @@
+/*jshint esversion: 6*/
 console.log("JS - Entrainement 3");
 var str, nb, bool, maybeLater, unset, obj, arr;
 
@@ -21,13 +22,13 @@ console.log("---concaténation des propriétés d'un objet ---");
 console.log("La " + obj.nom + " de " + obj.utilisateur + " est une " + obj.type + " " + obj.couleur + ". Elle coûte "+ obj.prix);
 console.log("---concaténation avec les litéraux de gabarit---");
 console.log("(template literals (voir mdn))");
-console.log(`La ${obj.nom} de ${obj.utilisateur} est une ${obj.type}  ${obj.couleur}. Elle coûte ${obj.prix}`);
+console.log(`La ${obj.nom} de ${obj.utilisateur} est une ${obj.type}``); ${obj.couleur}. Elle coûte ${obj.prix}`);
 // créer une fonction ajouterAuTableau, prennant un paramètre p, et ajoutant la valeur de ce param au tableau arr. (pour simplifier p ne sera pas un objet). exécuter la fonction quelques fois et log le résultat dans la console
 
 var ajouterAuTableau = function (p){
     arr.push(p);
     return arr;
-}
+};
 
 var res = ajouterAuTableau(2);
 console.log(arr === res);

@@ -29,8 +29,6 @@ var revisions1 = (function () {
         user.hobbies.push(h);
     }
 
-
-
     function setName(n) {
         user.name = n;
     }

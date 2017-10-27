@@ -1,4 +1,5 @@
-(function session1JS() {
+/*jshint esversion: 6*/
+var session1 = (function session1JS() {
 
     var user1, user2;
 
@@ -26,7 +27,7 @@
 
     var isNumber = function isNumber(value) {
        return typeof value === 'number' || typeof value === 'boolean' && !isNaN(value);
-    }
+   };
 
     function multiplier(a, b) {
         var res;
@@ -57,6 +58,29 @@
         console.log(`L'utilisateur se nommant ${getName(user)} est âgé(e) de ${getAge(user)} ans`);
     }
 
+
+    function displayBlocksId(user) {
+        var i,
+            blocks = document.querySelectorAll(".blocks .block"),
+            res = document.getElementById("exo5_res");
+
+        res.textContent = "";
+
+        for (i = 0; i < blocks.length; i += 1) {
+            console.log(blocks[i]);
+            res.innerHTML += "id du block n°" + (i + 1) + " : " + blocks[i].id + "<br>";
+        }
+    }
+
+    var btn = document.getElementById("btn1");
+    btn.onclick = function() {
+
+    };
+    btn.addEventListener("click", function() {
+
+    });
+
+
     window.onload = function() {
         var div = document.getElementById("ma_premiere_selection");
         // div.innerHTML = "<p><span></span></p>";
@@ -65,6 +89,7 @@
         console.log(div.tagName);
         console.log(div.id);
         console.log(div.children[0]);
+
         if (div.children.length >= 1) {
             div.style.background = "red";
         } else {
@@ -76,5 +101,9 @@
         displayUserInfo(user3);
     };
 
+    return {
+        exo5: displayBlocksId
+    };
 
-}())
+
+}());

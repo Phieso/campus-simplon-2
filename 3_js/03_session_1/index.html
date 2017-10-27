@@ -5,6 +5,7 @@
     <title>JS - Session 1</title>
     <script src="app.js"></script>
     <style>
+
         body {
             font-family: Avenir;
             font-size: 16px;
@@ -15,10 +16,29 @@
         }
         p {
             box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
-            padding: 10px;
-            max-width: 400px;
-            text-align: center;
             border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: center;
+        }
+
+        .blocks {
+            display: flex;
+        }
+        .blocks .block {
+            cursor: pointer;
+            align-items: center;
+            border: 4px solid;
+            display: flex;
+            height: 64px;
+            justify-content: center;
+            margin-right: 10px;
+            width: 64px;
+        }
+
+        #exo5_res {
+            margin-bottom: 220px;
+            text-align: left;
         }
     </style>
 </head>
@@ -37,8 +57,17 @@
         Déclarer 2 objets littéraux représentant des users (props age et nom).<br>
         Écrire une fonction getName(user), retournant le nom de l'user passé en paramètre.<br> Écrire une fonction getAge(user), retournant l'age de l'user passé en paramètre.
     </p>
-
-
     <div id="ma_premiere_selection"></div>
+    <h1 class="title">Exo 5</h1>
+
+    <div class="blocks">
+        <div id="yoyo" class="block">1</div>
+        <div id="block_2" class="block">2</div>
+        <div id="block_3" class="block">3</div>
+        <div id="block_4" class="block">4</div>
+        <div id="block_5" class="block">5</div>
+    </div>
+    <h2 class="title">Résultats Exo5 =></h2>
+    <p id="exo5_res" class="res">pas de résultat pour le moment...</p>
 </body>
 </html>

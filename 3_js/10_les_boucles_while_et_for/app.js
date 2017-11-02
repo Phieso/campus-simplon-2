@@ -37,7 +37,6 @@ var app = (function () {
         }
     }
 
-
     function lancerUneBoucleWhile() {
         var compteur = 1;
         while(compteur <= 1000) {

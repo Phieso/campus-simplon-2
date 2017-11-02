@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TP - Click</title>
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <!-- pour installer font-awesome en ocal depuis npm =>
+    npm install font-awesome -->
+    <!-- <script src="https://use.fontawesome.com/2d672d9c4e.js"></script> -->
+    <script src="app.js"></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            padding: 10px;
+            max-width: 400px;
+            text-align: center;
+            border-radius: .1rem;
+        }
+        .user {
+            color: dodgerblue;
+            padding: 10px;
+            border: 4px solid;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: color 1s ease-in;
+        }
+        .user.is-active {
+            color: darkorange;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">TD - Click</h1>
+    <p>
+        Rédiger un petit programme :<br>
+        En HTML, créer un bouton. Utiliser l'attribut onclick pour déclencher une fonction afficherMessage.<br>
+        Au click sur le bouton, afficher une alerte.<br>
+        En option : encapsuler votre code dans une IIFE.
+    </p>
+
+    <button onclick="tdClick.click();">action</button>
+
+    <h2 class="title">La suite, un peu plus dure !</h2>
+    <p>
+        Créer plusieurs boutons en HTML. Leur mettre une classe CSS btn. En JS, parcourir tous les .btn avec une boucle. Dans le cod JS, au clique sur chaque bouton, exécuter la fonction afficherMessage ! Attention au chargement du document ! :)
+    </p>
+    <!-- btn.btn{action $}*4 -->
+    <button class="btn">action 1</button>
+    <button class="btn">action 2</button>
+    <button class="btn">action 3</button>
+    <button class="btn">action 4</button>
+
+    <h2 class="title">Associer clicks et classes CSS</h2>
+    <p>
+        Rédiger un programme actifInactif :<br>
+        Créer un petit élément d'UI (widget) représentant un utilisateur. Se servir par exemple de font-awesome et son icône user.<br> Au click sur l'icône, activer ou désactiver une classe CSS .is-active. Si le widget n'est pas actif, ajouter la classe, sinon la retirer.<br>
+        Indice: utiliser une api déjà évoquée et testée en cours.<br>
+        ... element.classList !<br>
+        Bonus: ajouter une transition CSS à l'action.
+    </p>
+    <hr>
+    <i class="user fa fa-user" aria-hidden="true"></i>
+    <i class="user fa fa-user" aria-hidden="true"></i>
+    <i class="user fa fa-user" aria-hidden="true"></i>
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, reiciendis, sapiente. Quaerat voluptatibus necessitatibus perferendis sit, debitis tenetur assumenda sunt quod laborum iure eveniet fugiat aliquid. Quidem at blanditiis distinctio.
+    </p>
+</body>
+</html>

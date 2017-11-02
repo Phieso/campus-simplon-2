@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>TD Scroll</title>
+    <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
+    <script src="app.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Avenir;
+        }
+        #header {
+            /*background: white;
+            position: fixed;
+            width: 14%;
+            top: 0;
+            bottom: 0;
+            z-index: 10;*/
+        }
+        #header {
+            background: white;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 10;
+        }
+        .pane {
+            position: relative;
+            height: calc(100vh);
+            /*left: 14%;*/
+            padding: 20px;
+            color: white;
+        }
+        .pane:nth-of-type(1) {
+            background: dodgerblue;
+        }
+        .pane:nth-of-type(2) {
+            background: #BADA55;
+        }
+        .pane:nth-of-type(3) {
+            background: firebrick;
+        }
+        #pane_wrap {
+            position: relative;
+            top:50px;
+        }
+        #nav {
+            height: 50px;
+        }
+        #nav .list {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            /*flex-direction: column;*/
+        }
+        #nav .list .item {
+            cursor: pointer;
+            list-style: none;
+            width: 120px;
+            padding: 5px 20px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <nav id="nav">
+            <ul class="list">
+                <li data-target="pane1" class="item">pane 1</li>
+                <li data-target="pane2" class="item">pane 2</li>
+                <li data-target="pane3" class="item">pane 3</li>
+            </ul>
+        </nav>
+    </header>
+    <div id="pane_wrap">
+        <section id="pane1" class="pane">
+            <h1 class="title">pane 1</h1>
+        </section>
+        <section id="pane2" class="pane">
+            <h2 class="title">pane 2</h2>
+        </section>
+        <section id="pane3" class="pane">
+            <h2 class="title">pane 3</h2>
+        </section>
+    </div>
+</body>
+</html>

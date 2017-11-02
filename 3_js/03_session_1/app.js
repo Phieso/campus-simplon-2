@@ -1,4 +1,31 @@
 /*jshint esversion: 6*/
+
+
+// var simplon = (function() {
+//     console.log("je suis la function s et je suis exec !");
+//     var data = "je suis Othman !";
+//
+//     function test() {
+//         alert("hello jimmy");
+//     }
+//
+//     return {
+//         othman: data,
+//         jimmy: test
+//     };
+// }());
+//
+//
+// var res = bateau();
+// console.log(res);
+//
+//
+// console.log(simplon.othman);
+// console.log(simplon.jimmy());
+
+
+
+
 var session1 = (function session1JS() {
 
     var user1, user2;
@@ -58,11 +85,9 @@ var session1 = (function session1JS() {
         console.log(`L'utilisateur se nommant ${getName(user)} est âgé(e) de ${getAge(user)} ans`);
     }
 
-
-    function displayBlocksId(user) {
-        var i,
-            blocks = document.querySelectorAll(".blocks .block"),
-            res = document.getElementById("exo5_res");
+    function displayBlocksId() {
+        var i, blocks = document.querySelectorAll(".blocks .block"),
+        res = document.getElementById("exo5_res");
 
         res.textContent = "";
 
@@ -72,14 +97,15 @@ var session1 = (function session1JS() {
         }
     }
 
-    var btn = document.getElementById("btn1");
-    btn.onclick = function() {
-
-    };
-    btn.addEventListener("click", function() {
-
-    });
-
+    function colorDiv(element) {
+        console.log("element clické => ");
+        console.log(element);
+        if (element.style.backgroundColor === "" ||  element.style.backgroundColor === "white") {
+            element.style.backgroundColor = "purple";
+        } else {
+            element.style.backgroundColor = "white";
+        }
+    }
 
     window.onload = function() {
         var div = document.getElementById("ma_premiere_selection");
@@ -99,10 +125,12 @@ var session1 = (function session1JS() {
         // afficherMessage("Hello");
         // div.textContent = multiplier(false, 333);
         displayUserInfo(user3);
+        displayBlocksId();
     };
 
     return {
-        exo5: displayBlocksId
+        exo5: displayBlocksId,
+        exo6: colorDiv
     };
 
 

@@ -3,6 +3,7 @@
 console.log("---- on éxécute nos fonctions ----");
 function testDay2() {
     console.log("hello today !!!");
+    return true;
 }
 
 function donneMoiAManger(miam) {

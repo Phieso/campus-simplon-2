@@ -22,9 +22,21 @@ var app = (function() {
     function reveal() {
         byId("tp").classList.remove("is-hidden");
     }
-
+    window.onscroll = function(evt) {
+        console.log(evt);
+    };
     window.onload = function() {
+        var input = document.getElementById("saisie_user");
         console.log("window load event");
+        console.log(input);
+        console.log("input.value ->");
+
+        input.oninput = function() {
+            console.log(input.size);
+            if (input.size == 10) {
+                input.size = 23;
+            }
+        };
         // log("after load => #title_main =>");
         // log(byId("title_main"));
         byId("action").onclick = reveal;

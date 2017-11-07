@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>JS - Session 1</title>
+    <title>JS - Session 2</title>
     <script src="app.js"></script>
     <style>
         body {
@@ -12,6 +12,11 @@
         .title {
             color: dodgerblue;
             font-size: 1.3rem;
+        }
+        .input {
+            box-shadow: -1px 0.1px 1px 1px #110033;
+            border: none;
+            padding: 5px 10px 5px 20px;
         }
         p {
             box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
@@ -53,7 +58,7 @@
     </style>
 </head>
 <body>
-    <h1 class="title">JS Session 2</h1>
+    <h1 class="title">JS - Session 2</h1>
     <h2 class="title">Etape 1</h2>
     <p>
         Avant de commencer les exos de la session 2, créer une fonction constructeur de votre choix.<br>Exemples :  Produit, Utilisateur, Abonnement, Vehicule, InstrumentMusique, etc.<br>
@@ -66,18 +71,20 @@
         Bon code !
     </p>
     <h3 class="title">Exo 1 (inversion couleurs)</h3>
-    <!-- <div id="red" class="carre" style="background-color: red" onclick="session2.inverserCouleur2(this)">A</div>
-    <div id="green" class="carre" style="background-color: green" onclick="session2.inverserCouleur2(this)">B</div> -->
+    <div id="red" class="carre" style="background-color: red" onclick="session2.inverserCouleur2(this)">A</div>
+    <div id="green" class="carre" style="background-color: green" onclick="session2.inverserCouleur2(this)">B</div>
 
     <!-- Exemple avec les classes CSS => -->
 
-    <div class="carre rouge" onclick="session2.inverserCouleur3()">A</div>
+    <!-- <div class="carre rouge" onclick="session2.inverserCouleur3()">A</div>
     <div class="carre vert"  onclick="session2.inverserCouleur3()">B</div>
     <div class="carre rouge" onclick="session2.inverserCouleur3()">C</div>
     <div class="carre vert"  onclick="session2.inverserCouleur3()">D</div>
     <div class="carre rouge" onclick="session2.inverserCouleur3()">E</div>
-    <div class="carre vert" onclick="session2.inverserCouleur3()">F</div>
+    <div class="carre vert" onclick="session2.inverserCouleur3()">F</div> -->
 
     <h3 class="title">Exo 2 (inversion lettres)</h3>
+    <input type="text" id="saisie_user" class="input">
+    <p id="res_saisie"></p>
 </body>
 </html>

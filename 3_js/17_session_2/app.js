@@ -2,7 +2,8 @@
 var session2 = (function () {
     "use strict";
 
-    /* Préambule - TD Consttucteurs */
+    /********** Préambule - TD Constructeurs **********/
+
     var Synthetiseur = function(s) {
         this.anneeSortie = s.anneeSortie;
         this.imgUrl = s.imgUrl;
@@ -35,14 +36,19 @@ var session2 = (function () {
         anneeSortie: 2000,
         imgUrl: "https://medias.audiofanzine.com/images/normal/novation-supernova-iir-8472.jpg"
     });
-    console.log(moog);
-    console.log(moog.toString());
-    console.log("-----------");
-    console.log(nova);
-    console.log(nova.toString());
-    console.log("-----modification du prix de supernova ------");
-    console.log(nova.setPrix(200));
-    console.log(nova.toString());
+
+    (function afficherInfosSynthe() {
+        console.log(moog);
+        console.log(moog.toString());
+        console.log("-----------");
+        console.log(nova);
+        console.log(nova.toString());
+        console.log("-----modification du prix de supernova ------");
+        console.log(nova.setPrix(200));
+        console.log(nova.toString());
+    }());
+
+    /********** JS - SESSION 2 **********/
 
     var inverserCouleur = function(c) {
         var autre = document.getElementById(c.id === "red" ? "green" : "red");
@@ -77,10 +83,36 @@ var session2 = (function () {
         }
     };
 
+    var inverserLettres = function(str) {
+        var i, tmp = "";
+        for (i = str.length - 1; i >= 0; i -= 1) {
+            // tmp += str[i];
+            tmp += str[i] === " " ? '' : str[i];
+        }
+        return tmp;
+    };
+
+    var inverserLettres2 = function(str) {
+        return str.replace(/ /g, '').split('').reverse().join('');
+    };
+
+    window.onload = function() {
+        var inversion1, inversion2;
+        console.log(this);
+
+        document.getElementById("saisie_user").oninput = function() {
+            inversion1 = inverserLettres(this.value);
+            inversion2 = inverserLettres2(this.value);
+            console.log(inversion1 === inversion2); // affiche true
+            document.getElementById("res_saisie").textContent = inversion1;
+        };
+    };
 
     return {
         inverserCouleur: inverserCouleur,
         inverserCouleur2: inverserCouleur2,
         inverserCouleur3: inverserCouleur3,
+        inverserLettres: inverserLettres,
+        inverserLettres2: inverserLettres2,
     };
 }());

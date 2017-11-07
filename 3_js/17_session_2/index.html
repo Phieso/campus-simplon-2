@@ -33,9 +33,51 @@
             margin-right: 10px;
             width: 64px;
         }
+        .carre {
+            border: 4px solid;
+            cursor: pointer;
+            display: inline-block;
+            font-size: 30px;
+            font-weight: bold;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            width: 100px;
+        }
+        .carre.rouge {
+            background-color: red;
+        }
+        .carre.vert {
+            background-color: green;
+        }
     </style>
 </head>
 <body>
     <h1 class="title">JS Session 2</h1>
+    <h2 class="title">Etape 1</h2>
+    <p>
+        Avant de commencer les exos de la session 2, créer une fonction constructeur de votre choix.<br>Exemples :  Produit, Utilisateur, Abonnement, Vehicule, InstrumentMusique, etc.<br>
+        Créer plusieurs instances de votre construct avec des paramètres différents.<br>
+        En option: lier une ou plusieurs méthodes via le prototype.
+    </p>
+    <h2 class="title">Suite</h2>
+    <p>
+        Rédiger les exos de la session 2 !<br>
+        Bon code !
+    </p>
+    <h3 class="title">Exo 1 (inversion couleurs)</h3>
+    <!-- <div id="red" class="carre" style="background-color: red" onclick="session2.inverserCouleur2(this)">A</div>
+    <div id="green" class="carre" style="background-color: green" onclick="session2.inverserCouleur2(this)">B</div> -->
+
+    <!-- Exemple avec les classes CSS => -->
+
+    <div class="carre rouge" onclick="session2.inverserCouleur3()">A</div>
+    <div class="carre vert"  onclick="session2.inverserCouleur3()">B</div>
+    <div class="carre rouge" onclick="session2.inverserCouleur3()">C</div>
+    <div class="carre vert"  onclick="session2.inverserCouleur3()">D</div>
+    <div class="carre rouge" onclick="session2.inverserCouleur3()">E</div>
+    <div class="carre vert" onclick="session2.inverserCouleur3()">F</div>
+
+    <h3 class="title">Exo 2 (inversion lettres)</h3>
 </body>
 </html>

@@ -2,6 +2,8 @@
 var session2 = (function () {
     "use strict";
 
+    var users = [];
+
     /********** Préambule - TD Constructeurs **********/
 
     var Synthetiseur = function(s) {
@@ -96,16 +98,53 @@ var session2 = (function () {
         return str.replace(/ /g, '').split('').reverse().join('');
     };
 
+    var dessinerColones = function(nbCols) {
+        var i, cols = "|"; // 2
+        for (i = 0; i < nbCols; i += 1) {
+            cols += ` ${i} |`;
+            // cols += i + " |";
+        }
+        return cols;
+    };
+
+    var dessinerLignes = function(nbLignes, nbCols) {
+        var i, lignes = "";
+        for (i = 0; i < nbLignes; i += 1) {
+            lignes += dessinerColones(nbCols) + '\n';
+        }
+        return lignes;
+    };
+
+    var estPalindrome = function(a, b) {
+        return a === b;
+    };
+
+
     window.onload = function() {
-        var inversion1, inversion2;
-        console.log(this);
 
         document.getElementById("saisie_user").oninput = function() {
-            inversion1 = inverserLettres(this.value);
-            inversion2 = inverserLettres2(this.value);
-            console.log(inversion1 === inversion2); // affiche true
-            document.getElementById("res_saisie").textContent = inversion1;
+            var invers1 = inverserLettres(this.value);
+            var invers2 = inverserLettres2(this.value);
+            var res;
+            if (estPalindrome(this.value, invers2)) {
+                res = "cette chaîne est palindrome";
+            } else {
+                res = "cette chaîne n'est pas palindrome";
+            }
+            document.getElementById("res_saisie").textContent = invers2;
+            document.getElementById("res_palindrome").textContent = res;
         };
+
+        document.getElementById("creer_lignes").onclick = function() {
+            var str = dessinerLignes(
+                Number(document.getElementById("nb_lignes").value),
+                Number(document.getElementById("nb_cols").value)
+            );
+            document.getElementById("res_exo3").textContent += str;
+            console.log(str);
+        };
+
+
     };
 
     return {

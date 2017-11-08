@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>JS - Les boucles do...while et for...in</title>
+    <!-- <script src="app.js" defer></script> -->
+    <script src="exemple.js" defer></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: center;
+        }
+        p:empty {
+            display: none;
+        }
+        .blocks {
+            display: flex;
+        }
+        .blocks .block {
+            cursor: pointer;
+            align-items: center;
+            border: 4px solid;
+            display: flex;
+            height: 64px;
+            justify-content: center;
+            margin-right: 10px;
+            width: 64px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">JS - Les boucles do...while et for...in</h1>
+    <h2 class="title">Do while</h2>
+    <p>
+        Mange ta soupe... et après tu pourras jouer à la console.<br>
+        C'est en gros la philosophie de do...while.<br>
+        Cette boucle sert par exemple à forcer la répétition d'une action, tant qu'une condition est truthy.
+    </p>
+    <p id="res_ajout_tableau"></p>
+    <h2 class="title">For...in</h2>
+    <p>
+        Avec cette boucle, on parcourt les propriétés d'un objet.<br>
+        On peut s'assurer que la propriété lue est directement détenue par l'objet avec la méthode <a src="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Object/hasOwnProperty" target="_blank">hasOwnProperty()</a>. Comme ça, on exclut les propriétés héritées via la chaîne de prototype.<br>
+    </p>
+    <p id="res_prop_objet"></p>
+</body>
+</html>

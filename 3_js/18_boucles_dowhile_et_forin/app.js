@@ -11,9 +11,39 @@ var bouclesV2 = (function () {
         prenom: "Fegan", profession: "dev js", joueurDeGo: true
     };
 
+    var n = 0;
+
+    do {
+        console.log("dans loop");
+        n += 1;
+
+    } while (n < 2);
+
+    var collection = {
+        str: "a",
+        nbr: 13,
+        bool: false,
+        nll: null,
+        und: undefined,
+        f: function() {
+            console.log("exec !");
+        },
+        arr: [1, 2, 3, 4],
+        o: {name: "hello"}
+    };
+    console.log(collection.str);
+    console.log(collection["str"]);
+    console.log(collection.str === collection["str"]);
+    console.log("---------------");
+    for (let cle in collection) {
+        console.log(cle); // affiche les props
+        console.log(collection[cle]);
+    }
+
+
     var lancerDoWhile = function() {
         var arr = [];
-        
+
         do {
             arr.push(prompt("saisir valeur ..."));
 
@@ -27,18 +57,16 @@ var bouclesV2 = (function () {
     };
 
     var lancerForIn = function(obj) {
-        var prop,
-        cible = document.getElementById("res_prop_objet");
+        var cible = document.getElementById("res_prop_objet");
         cible.innerHTML = ""; // on vide l'élément de son contenu
-
-        for (prop in obj) {
+        for (let prop in obj) {
             if (obj.hasOwnProperty(prop)) {
                 cible.innerHTML += prop + " : " + obj[prop] + '<br>';
             }
         }
-
         return obj;
     };
+    lancerForIn(chatDAulnay);
 
     return {
         lancerDoWhile: lancerDoWhile,

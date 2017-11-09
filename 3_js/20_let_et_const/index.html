@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="UTF-8">
+    <title>JS - let et const</title>
+    <script src="app.js" defer></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: justify;
+        }
+        p:empty {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">JS - let et const</h1>
+    <p>
+        En ES6 (EcmaScript 6, dernière version de JS), on dispose de deux nouvelles manière de déclarer nos variables.
+    </p>
+    <h2 class="title">Pour rappel...</h2>
+    <p>
+        La portée d'une variable, déclarée avec l'instruction <i>var</i>, est <b>fonctionnelle</b>.<br>
+        Une var est donc lisible dans le scope de la fonction courante, ET ses scopes enfants.
+    </p>
+    <h2 class="title">let</h2>
+    <p>
+        Variable dont la portée est le block courant.
+    </p>
+    <h2 class="title">const</h2>
+    <p>
+        Dans le scope global, this représente window.<br>
+        window est l'objet global contenant toutes les fonction natives de JS.
+    </p>
+
+</body>
+</html>

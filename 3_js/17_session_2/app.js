@@ -119,6 +119,49 @@ var session2 = (function () {
         return a === b;
     };
 
+    var User = function(n, a) {
+        this.name = n;
+        this.age = a;
+    };
+
+    User.prototype.sayHello = function(user) {
+        console.log("Hello " + user.name);
+    };
+
+    var saisirInfosUser = function(n) {
+        var age, name, nameOk = false, ageOk = false;
+
+        do {
+            name = window.prompt("saisir nom user" + (n + 1));
+            nameOk = isNaN(name) && name.length >= 4;
+
+        } while(!nameOk);
+
+        do {
+            age = window.prompt("saisir age user" + (n + 1));
+            ageOk = isFinite(age) && age > 0 && age < 130;
+
+        } while(!ageOk);
+
+        return new User(name, age);
+    };
+
+    var remplirTableauUsers = function(n) {
+        var i;
+        for (i = 0; i < n; i += 1) {
+            users.push(saisirInfosUser(i));
+        }
+        return users;
+    };
+
+    var saluerUsers = function(users) {
+        var i;
+        for (i = 0; i < users.length; i += 1) {
+            if (i > 0) {
+                users[i].sayHello(users[i - 1]);
+            }
+        }
+    };
 
     window.onload = function() {
 
@@ -144,6 +187,24 @@ var session2 = (function () {
             console.log(str);
         };
 
+        document.getElementById("creer_users").onclick = function() {
+            remplirTableauUsers(
+                Number(document.getElementById("nb_users").value)
+            );
+        };
+
+        document.getElementById("hello_users").onclick = function() {
+            if (!users || users.length < 2) {
+                alert("pas assez d'users à saluer");
+            } else {
+                saluerUsers(users);
+            }
+        };
+
+        document.getElementById("voir_users").onclick = function() {
+            console.log("users saisis ----->");
+            console.log(users);
+        };
 
     };
 

@@ -7,12 +7,12 @@ const workinJSON = (function () {
 
     var
         myArr = [1, 2, 3, 4, 5],
-        myJSONArr = "[1, 2, 3, 4, 5]",
-        myObj = { name:"choubi", last:"dooh!" },
-        myJSONObj = '{ "name":"doobi", "last":"daah!" }';
+        myJSONArr = "[5, 4, 3, 2, 1]",
+        myObj = { name: "choubi", last: "dooh!" },
+        myJSONObj = '{ "name": "doobi", "last": "daah!" }';
 
     /**
-     * Observe les actions de l'user sur les éléments DOM
+     * Convertit une valeur JS en chaîne JSON
      * @return {Array} RAS
      * @alias workinJSON.stringifyToJSON
      */
@@ -25,8 +25,9 @@ const workinJSON = (function () {
             jsonObj
         ];
     };
+
     /**
-     * Observe les actions de l'user sur les éléments DOM
+     * Convertit une chaîne JSON en valeur JS
      * @return {Array} RAS
      * @alias workinJSON.parseFromJSON
      */
@@ -39,6 +40,35 @@ const workinJSON = (function () {
             jsObj
         ];
     };
+
+    /**
+     * Observe les actions de l'user sur les éléments DOM
+     * @return {Array} RAS
+     * @alias workinJSON.parseFromJSON
+     */
+    const convertToJSON = function(p) {
+        return JSON.stringify(p);
+    };
+
+    let converted;
+    console.log("----- CONVERSION EN JSON ----------");
+    converted = convertToJSON("abcd");
+    console.log(converted);
+    converted = convertToJSON(123);
+    console.log(converted);
+    converted = convertToJSON(true);
+    console.log(converted);
+    converted = convertToJSON(false);
+    console.log(converted);
+    converted = convertToJSON({foo: "bar"});
+    console.log(converted);
+    converted = convertToJSON([1, 2, 3, 4]);
+    console.log(converted);
+    converted = convertToJSON(null);
+    console.log(converted);
+    converted = convertToJSON(undefined);
+    console.log(converted);
+    console.log("*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*_*");
 
     window.onload = function init() {
         document.getElementById("to_json").onclick = function() {

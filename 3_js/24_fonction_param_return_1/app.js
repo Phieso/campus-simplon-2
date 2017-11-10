@@ -42,8 +42,8 @@ const fonctionParamReturn1 = (function () {
      * Une fonction stupide qui retourne le paramètre reçu sans aucune autre action.
      * @author Guillaume AMANGOUA <guillaume@owlab.io>
      * @alias fonctionParamReturn1.dummyReturn
-     * @param {number|string|boolean|Object|null|undefined} p
-     * @return {number|string|boolean|Object|null|undefined} le paramètre inchangé
+     * @param {(number|string|boolean|Object|null|undefined)} p
+     * @return {(number|string|boolean|Object|null|undefined)} le paramètre inchangé
      */
     const dummyReturn = function dummyReturn(p) {
         return p;

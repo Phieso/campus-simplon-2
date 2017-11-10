@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Events load et DOMContentLoaded</title>
+    <script src="probleme.js"></script>
+    <!-- <script src="soluce.js"></script> -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 class="title">Events load et DOMContentLoaded</h1>
+    <h2 class="title">load event</h2>
+    <p>
+        L'event <a href="https://developer.mozilla.org/en-US/docs/Web/Events/load" target="_blank">window.onload</a> est déclenché quand la page est chargée <b>totalement</b> (images et feuilles de styles comprises).
+    </p>
+    <h1 class="title">DOMContentLoaded event</h1>
+    <p>
+        L'event <a href="https://developer.mozilla.org/fr/docs/Web/Events/DOMContentLoaded">DOMContentLoaded</a> est déclenché quand la page est chargée (le HTML), sans attendre le chargement des feuilles de styles, images, et sous-frames. Il sera donc déclenché plus vite que load.<br>
+        C'est donc à vous de <b>choisir</b> quel event est le plus intérressant pour votre programme.
+    </p>
+    <h2 class="title">load est unique</h2>
+    <p>
+        Contrairement à DOMContentLoaded, load est unique. C'est à dire que l'évènement load ne survient <b>qu'une fois pas par chargement de page</b>. Dans le cas ou vos programmes écouteraient plusieurs fois window.onload, seul le dernier appel serait exécuté.
+    </p>
+    <h2 class="title">Le problème ?</h2>
+    <p>
+        Comment faire pour faire réagir plusieurs sous-programmes au même event load, s'ils sont dans des scopes différents ?
+    </p>
+    <h2 class="title">Une solution</h2>
+    <p>
+        Dédier une fonction init générale, à la gestion de ce problème.<br> Dans nos IIFE, retourner les fonctions de manipulation du DOM ayant besoin d'un load complet.<br> Puis les exécuter au déclechement de window.onload, une fois pour toutes.
+    </p>
+</body>
+</html>

@@ -9,8 +9,8 @@ const app = (function () {
 
     /**
      * Observe les actions de l'user sur les éléments DOM
-     * @return {undefined} RAS
      * @alias app.observer
+     * @return {undefined} RAS
      */
     const observer = function() {
         document.getElementById("my_btn").onclick = ajouterValeur;
@@ -18,18 +18,20 @@ const app = (function () {
     };
 
     /**
-     * Ajoute une valeur au tableau values[]
+     * Ajoute une valeur au tableau local au namespace values[]
      * @alias app.ajouterValeur
      * @param {object} evt - l'évènement click
-     * @return {string} la dernière valeur ajoutée
+     * @return {string} la dernière valeur ajoutée OU chaîne si aucune valeur saisie par l'user
      */
     const ajouterValeur = function(evt) {
         let input = document.getElementById("my_input");
         let list = document.getElementById("my_list");
         let saisie = input.value;
+        if (!saisie) return "";
         values.push(saisie);
-        list.innerHTML += `<li>${ saisie }</li>`;
+        list.innerHTML += `<li id="item_${values.length}">${ saisie }</li>`;
         input.value = "";
+        input.focus(); // on redonne le
         return saisie;
     };
 
@@ -45,14 +47,7 @@ const app = (function () {
         }
     };
 
-    /**
-     * Ajoute une valeur à l'array values[]
-     * @alias app.init
-     */
-    const init = function init() {
-        observer();
-    };
 
-    window.onload = init;
+    window.onload = observer;
 
 }());

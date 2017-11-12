@@ -52,7 +52,7 @@ const fonctionParamReturn1 = (function () {
 
     window.addEventListener("DOMContentLoaded", function init() {
         let res;
-        res = one();
+        // res = one();
         res = hello();
         console.log(hello());
         console.log("-- hello() que vaut res ? --");

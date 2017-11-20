@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>JS - La boucle forEach</title>
+    <script src="app.js" defer></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+            padding: 20px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: justify;
+        }
+        p:empty {
+            display: none;
+        }
+        .blocks {
+            display: flex;
+        }
+        .blocks .block {
+            cursor: pointer;
+            align-items: center;
+            border: 4px solid;
+            display: flex;
+            height: 64px;
+            justify-content: center;
+            margin-right: 10px;
+            width: 64px;
+        }
+        pre {
+            padding-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">Révisions</h1>
+    <p>
+        Déclarer un array <b>arr</b> et remplissez le de valeurs quelconques.<br>
+        Parcourir le tableau avec une boucle for <b>ET</b> une boucle while.<br>
+        Afficher le contenu de chaque case dans la console.
+    </p>
+    <h1 class="title">JS - La boucle forEach</h1>
+    <p>
+        Une boucle for ... avec un style "programmation fonctionnelle" !
+    </p>
+    <p>
+        La boucle <a target="_blank"  href="https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Objets_globaux/Array/forEach">forEach</a> permet d'itérer sur un tableau.<br> Sa syntaxe peut surprendre au début, mais elle est très pratique.
+    </p>
+    <h2 class="title">Syntaxe</h2>
+    <pre>
+tableau.forEach(function clbk(el, i, arr) {
+
+    console.log("tour n° " + (i + 1));
+    console.log(el);
+
+}, valeurDeThis);
+    </pre>
+    <h2 class="title">Similaire à ...</h2>
+    <pre>
+function parcourirArr(el, i, arr) {
+
+    console.log("tour n° " + (i + 1));
+    console.log(el);
+}
+
+tableau.forEach(parcourirArr, window);
+    </pre>
+    <h2 class="title">Callback</h2>
+    <p>
+        La boucle forEach prend donc une fonction en argument (un callback). Cette fonction sera exécutée pour chaque valeur du tableau, dans l'ordre de placement.
+    </p>
+    <h2 class="title">Valeur de retour</h2>
+    <p>
+        forEach retourne undefined.
+    </p>
+    <h2 class="title">Valeur de this</h2>
+    <p>
+        En plus du callback, on peut indiquer la valeur de this utilisée dans le scope du callback.
+    </p>
+</body>
+</html>

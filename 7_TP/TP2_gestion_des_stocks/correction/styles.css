@@ -41,7 +41,7 @@ body {
     color: #B4D455;
 }
 .page:not(.is-active) {
-    /*display: none;*/
+    display: none;
 }
 #form_prod > * {
     margin-bottom: 15px;

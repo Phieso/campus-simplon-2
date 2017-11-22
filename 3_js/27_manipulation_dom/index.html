@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>JS - manipulation DOM</title>
+    <script src="app.js" defer></script>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: justify;
+        }
+        p:empty {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <h1 class="title">JS - Manipulation DOM</h1>
+    <p>
+        <b><a href="https://developer.mozilla.org/fr/docs/Web/API/ParentNode/children" target="_blank">element.children</a></b><br>
+        <b><a href="https://developer.mozilla.org/fr/docs/Web/API/Node/parentElement" target="_blank">element.parentElement</a></b><br>
+        <b><a href="http://mdn.beonex.com/en/DOM/Element.previousElementSibling.html" target="_blank">element.previousElementSibling</a></b><br>
+        <b><a href="http://mdn.beonex.com/en/DOM/Element.nextElementSibling.html" target="_blank">element.nextElementSibling</a></b><br>
+        <b><a href="https://developer.mozilla.org/fr/docs/Web/API/Document/createElement" target="_blank">document.createElement</a></b><br>
+        <b><a href="https://developer.mozilla.org/fr/docs/Web/API/Node/appendChild" target="_blank">document.appendChild</a></b><br>
+        <b><a href="https://developer.mozilla.org/fr/docs/Web/API/Node/removeChild" target="_blank">document.removeChild</a></b>
+    </p>
+    <h2 class="title">element.children()</h2>
+    <p>
+        Récupérer tous les enfants d'un élément sous forme de tableau (htmlCollection)
+    </p>
+    <h2 class="title">element.parentElement()</h2>
+    <p>
+        Récupérer le parent d'un élément.
+    </p>
+    <h2 class="title">element.previousElementSibling()</h2>
+    <p>
+        Récupérer le prochain frère gauche d'un élément.
+    </p>
+    <h2 class="title">element.nextElementSibling()</h2>
+    <p>
+        Récupérer le prochain frère droit d'un élément.
+    </p>
+    <h2 class="title">document.createElement(nodeName)</h2>
+    <p>
+        Créer un objet HTML.
+    </p>
+    <h2 class="title">element.appendChild(node)</h2>
+    <p>
+        Insérer un objet HTML créé avec document.createElement dans le document.
+    </p>
+    <h2 class="title">element.removeChild(enfant)</h2>
+    <p>
+        Supprime un enfant d'un élément.
+    </p>
+</body>
+</html>

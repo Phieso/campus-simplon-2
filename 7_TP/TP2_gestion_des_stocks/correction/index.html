@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="styles.css">
-    <script src="stocks.js"></script>
+    <script src="sourceCorrection.js"></script>
     <title>TP2 - Gestion des Stocks</title>
 </head>
 <body>
@@ -31,10 +31,10 @@
             <h2 class="title">Créer un produit</h2>
 
             <form id="form_prod" class="f-col">
-            <input id="nom" type="text" required placeholder="nom du produit *">
-            <input id="prix" type="number" min="1" required placeholder="prix du produit *">
-            <button id="valider_prod" class="btn">ajouter au stock</button>
-        </form>
+                <input id="nom" type="text" required placeholder="nom du produit *">
+                <input id="prix" type="number" min="1" required placeholder="prix du produit *">
+                <button id="valider_prod" class="btn">ajouter au stock</button>
+            </form>
         </div>
 
         <div id="page_lister" class="page">
@@ -51,7 +51,7 @@
                 </thead>
                 <tbody id="tableur_lignes">
                     <tr id="stock_vide">
-                        <td colspan="5">pas de produits pour le moment ...</td>
+                        <td colspan="4">pas de produits pour le moment ...</td>
                     </tr>
                 </tbody>
             </table>

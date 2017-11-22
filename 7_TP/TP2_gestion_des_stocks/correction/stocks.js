@@ -13,7 +13,7 @@ const tpGestionDesStocks = (function () {
     var maxProducts = 0;
 
     /**
-     * Fonction pour faire apparaître/disparaître la page active
+     * Ajouter une ligne dans le tableur
      * @param {object} prod - le produit à afficher
      * @return {undefined} RAS
      */
@@ -73,7 +73,7 @@ const tpGestionDesStocks = (function () {
 
 
     /**
-     * Supprime un produit donné du stock et du DOM
+     * Supprime un produit du DOM
      * @param {object} icon - objet DOM de l'icône suppression cliquée
      * @return {object} l'objet DOM retiré de l'arbre DOM
      */

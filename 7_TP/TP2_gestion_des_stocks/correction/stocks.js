@@ -12,6 +12,11 @@ const tpGestionDesStocks = (function () {
     const produits = [];
     var maxProducts = 0;
 
+
+    const afficherStock = function afficherStock() {
+        document.getElementById("stock_actuel").textContent = produits.length;
+    };
+
     /**
      * Fonction pour faire apparaître/disparaître la page active
      * @param {object} prod - le produit à afficher
@@ -89,6 +94,7 @@ const tpGestionDesStocks = (function () {
 
         produits.push(prod); // le tableu js est mis à jour !
         ajouterTableur(prod); // la ligne est ajoutée au tableur
+        afficherStock();
         verifierTableurVide(); // vérifie la longueur du tableau pour éventuellement retirer la ligne par défaut dans le HTML
         console.log("nouveau produit saisi => ");
         console.log(prod);
@@ -152,6 +158,7 @@ const tpGestionDesStocks = (function () {
             }
         });
 
+        afficherStock();
         verifierTableurVide();
         // console.log("stock mis à jour =>");
         // console.log(produits);

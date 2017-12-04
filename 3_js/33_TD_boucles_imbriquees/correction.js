@@ -33,10 +33,7 @@ const exo2 = (function exo2() {
 
     nbColonnes.oninput = function modifierColonnes() {};
 
-    return {
-      dessiner: dessinerMatrice,
-      reset: resetMatrice
-    };
+    return dessinerMatrice;
 
 }());
 

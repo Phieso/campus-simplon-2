@@ -39,5 +39,5 @@ const exo2 = (function exo2() {
 
 window.addEventListener("DOMContentLoaded", function init() {
   exo1();
-  exo2.dessiner(5, 5);
+  exo2(5, 5);
 });

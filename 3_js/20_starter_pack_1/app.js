@@ -2,7 +2,9 @@
 const app = (function () {
     "use strict";
     // console.log(this); // affiche undefined (mode strict)
-    const observer = function() {
+    // 
+    const init = function() {
+        // console.log(this); // affiche window (déclenche load)
         document.getElementById("my_btn").onclick = action1;
         document.getElementById("my_input").oninput = action2;
         window.onscroll = action3;
@@ -36,8 +38,6 @@ const app = (function () {
         // console.log(evt);
     };
 
-    window.onload = function init() {
-        // console.log(this); // affiche window (déclenche load)
-        observer();
-    };
+    window.onload = init;
+
 }());

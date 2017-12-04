@@ -3,7 +3,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
-    <title>JS - Révisions II</title>
+    <title>JS - Révisions III</title>
     <script src="app.js"></script>
     <style>
         body {
@@ -28,49 +28,11 @@
             display: none;
         }
     </style>
-    <script>
-        var a = false, b = 0, c = NaN, d = '', e = null, f, arr = [0.1, 21, 313, 45, 5000000];
-        product = {
-            name: "random stuff",
-            price: 123,
-            available: true,
-            colors: ["green", "yellow", "red"]
-        }
-        // ci-dessous, what's log ?!! voir app.js
-        log(typeof NaN);
-        console.log(typeof product);
-        console.log(typeof product.available);
-        console.log(typeof f);
-        console.log("----");
-        console.log(arr.length);
-        console.log(arr[2]);
-        console.log(product.colors[1]);
-        console.log("----");
-        console.log(!a);
-        console.log(!!a);
-        console.log(Boolean(a));
-        console.log(Boolean(product));
-        console.log(Boolean(product) === !!product);
-        console.log("----");
-        log("before load => #title_main =>");
-        log(byId("title_main"));
-        // window.onload = function() {
-        //     alert("after load => #title_main =>");
-        //     log(byId("title_main"));
-        // }
-    </script>
 </head>
 <body>
-    <h1 id="title_main" class="title">JS - Révisions II</h1>
+    <h1 id="title_main" class="title">JS - Révisions III</h1>
     <p>
-        Rappel :
-    </p>
-    <ul>
-        <li>log === debug === important</li>
-        <li>documentation (mdn, w3c, caniuse) === important</li>
-    </ul>
-    <p>
-        Points clés abordés :
+        Points précédents :
     </p>
     <ol>
         <li>variables</li>
@@ -78,8 +40,8 @@
         <li>NaN !== NaN</li>
         <li>truthy / falsy</li>
         <li>operators</li>
-        <li>function</li>
-        <li>function : exécution</li>
+        <li>function()</li>
+        <li>function() : exécution()</li>
         <li>function => param</li>
         <li>function => return (defaut || instruction)</li>
         <li>portée des variables (function)</li>
@@ -91,17 +53,60 @@
         <li>window === this</li>
         <li>this !== this</li>
         <li>window.onload</li>
-        <li>document.getElementById</li>
-        <li>document.querySelector</li>
-        <li>document.querySelectorAll</li>
+        <li>document.getElementById()</li>
+        <li>document.querySelector()</li>
+        <li>document.querySelectorAll()</li>
         <li>element (htmlElements)</li>
         <li>element.property</li>
         <li>element.onclick</li>
-        <li>element.classList (api)</li>
+        <li>element.classList</li>
         <li>element.className</li>
     </ol>
-    <input type="text" id="saisie_user" size="10">
+    <p>
+        Nouvelle étape franchie ensemble :
+    </p>
+    <ol>
+        <li><b>function - param(s) - return</b></li>
+        <li>Les constructeurs</li>
+        <li>instanceof (constructeurs)</li>
+        <li>Le prototype</li>
+        <li>Les closures</li>
+        <li>boucle do...while</li>
+        <li>boucle for...in</li>
+        <li>boucle forEach()</li>
+        <li>Array.slice()</li>
+        <li>object.hasOwnProperty(prop) (utile pour for...in)</li>
+        <li>let (variable es6)</li>
+        <li>const (variable es6)</li>
+        <li>events:
+            <ul>
+                <li>keypress</li>
+                <li>DOMContentLoaded</li>
+                <li>scroll</li>
+                <li>evt.preventDefault()</li>
+            </ul>
+        </li>
+        <li>JSON</li>
+        <li>JSON.stringify()</li>
+        <li>JSON.parse()</li>
+        <li>element.getBoundingClientRect()</li>
+        <li>
+            manipulation DOM:
+            <ul>
+                <li>element.children</li>
+                <li>element.parentElement</li>
+                <li>element.previousElementSibling</li>
+                <li>document.createElement()</li>
+                <li>element.appendChild()</li>
+                <li>element.removeChild()</li>
+                <li>element.insertBefore()</li>
+            </ul>
+        </li>
+    </ol>
+
+
     <button id="action" class="btn">click me !</button>
+
     <section id="tp" class="is-hidden">
         <h2 class="title">TP</h2>
         <p>

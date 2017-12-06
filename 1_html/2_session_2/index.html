@@ -1,13 +1,235 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>HTML - Session 2</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        html {
+            font-size: 16px;
+        }
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+            padding-bottom: 120px;
+        }
+        ul {
+            padding-left: 0;
+        }
+        li {
+            list-style: none;
+            padding-left: 10px;
+        }
+        li::before {
+            content: " - ";
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: justify;
+        }
+        p:empty {
+            display: none;
+        }
+        label {
+            cursor: pointer;
+        }
+        form {
+            padding-bottom: 20px;
+            border-bottom: 2px solid;
+        }
+        #music_search .btn {
+            height: 32px;
+            width: 32px;
+            padding: 5px;
+            min-width: 20px;
+            background: black;
+            color: white;
+        }
+        .block {
+            display: block;
+        }
+        .mt {
+            margin-top: 20px;
+        }
+        .user-input.mt {
+            margin-top: 10px;
+        }
+        .user-input {
+            border: 2px solid black;
+            padding: 5px 0 5px 15px;
+            width: 220px;
+            height: 32px;
+            line-height: 32px;
+        }
+        .circle {
+            align-items: center;
+            background: dodgerblue;
+            border-radius: 50%;
+            color: white;
+            display: flex;
+            font-size: 1.2rem;
+            font-weight: bold;
+            height: 250px;
+            justify-content: center;
+            transition: height 1s linear, width 1s linear;
+            width: 250px;
+        }
+    </style>
+    <script>
+        var modulePriceChange = (function() {
+            "use strict";
+            window.addEventListener("DOMContentLoaded", function listen() {
+                const input = document.getElementById("price_max");
+                const price = document.getElementById("current_price_max");
+                input.oninput = function changePrice() {
+                    price.textContent = input.value;
+                };
+            });
+        }());
+
+        var moduleShapeShifter = (function() {
+            "use strict";
+            window.addEventListener("DOMContentLoaded", function listen() {
+                const circle = document.getElementById("circle");
+                const size = circle.querySelector(".size");
+
+                document.getElementById("shape_shifter").oninput = function shiftShape() {
+                    const val = this.value;
+                    circle.style.height = val + "px";
+                    circle.style.width = val + "px";
+                    size.textContent = val;
+                };
+            });
+        }());
+    </script>
 </head>
+
 <body>
     <h1 class="title">HTML - Session 2</h1>
+    <h2 class="title">Le roi de l'auto</h2>
+    <form action="traitement.php" method="post">
+        <label for="brand">marque</label>
+        <select name="brand" id="brand" class="block">
+            <option value="mercedes">mercedes</option>
+            <option value="audi">audi</option>
+            <option value="range rover">range rover</option>
+            <option value="peugeot">peugeot</option>
+            <option value="renault">renault</option>
+            <option value="buggati">buggati</option>
+            <option value="smart">smart</option>
+            <option value="aston martin">aston martin</option>
+        </select>
+        <label for="range" class="block mt">gamme</label>
+        <select name="range" id="range">
+            <option>berline</option>
+            <option>SUV</option>
+            <option>compacte</option>
+            <option>sportive</option>
+            <option>super sportive</option>
+            <option>van</option>
+            <option>utilitaire</option>
+            <option>crossover</option>
+        </select>
+        <span class="block mt">Etat</span>
+        <label for="new_used">Neuf &amp; occasion</label>
+        <input id="new_used" name="state" type="radio" value="new_used" checked>
+        <label for="new">Neuf</label>
+        <input id="new" name="state" type="radio" value="new">
+        <label for="used">Occasion</label>
+        <input id="used" name="state" type="radio" value="used">
+        <label for="price_max" class="block mt">Prix max</label>
+        <input id="price_max" type="range" name="price_max" min="1000" max="300000" step="300" value="3000">
+        <span id="current_price_max">3000</span><span>&euro;</span>
+        <button class="btn block mt">ok</button>
+    </form>
+    <h2 class="title">Inscription</h2>
+    <form action="traitement.php" method="post" enctype="multipart/form-data">
+        <input name="name" type="text" required class="block user-input mt" placeholder="votre nom *">
+        <input name="lastname" type="text" required class="block user-input mt" placeholder="votre prénom *">
+        <input name="mail" type="email" required class="block user-input mt" placeholder="votre email *">
+        <input name="phone" type="tel" required class="block user-input mt" placeholder="votre numéro de téléphone *">
+        <input name="pseudo" type="text" class="block user-input mt" placeholder="votre pseudo">
+        <input name="password" type="password" required class="block user-input mt" placeholder="votre mot de passe *">
+        <input name="birthday" type="date" class="block user-input mt">
+        <label for="avatar" class="block mt">Votre avatar</label>
+        <input name="avatar" type="file" class="block mt">
+        <input name="register" type="submit" class="btn mt" value="c'est parti !">
+    </form>
+    <h2 class="title">Music search !</h2>
     <p>
-        comming soon
+        Note: pour la suite de cet exo, créez un compte sur developpers.music-story.com.<br> Clickez sur api dans la nav et remplissez le formulaire ; )
     </p>
+    <form action="traitement.php" method="post" id="music_search">
+        <input type="text" list="genre_music" placeholder="votre genre musical !" class="user-input" name="genre_music">
+        <input type="submit" class="btn" value="OK">
+        <datalist id="genre_music" name="genre_music">
+            <option>Metal</option>
+            <option>Country</option>
+            <option>Variété</option>
+            <option>Dance Hall</option>
+            <option>Rap</option>
+            <option>Soul</option>
+            <option>Modern Jazz</option>
+            <option>Funk</option>
+            <option>Ragga</option>
+            <option>Reggae</option>
+            <option>Electro</option>
+            <option>Rock</option>
+            <option>Jazz</option>
+            <option>Blues</option>
+            <option>Gnawa</option>
+            <option>Kompa</option>
+            <option>Zouk</option>
+            <option>Zouk love</option>
+            <option>Raï</option>
+            <option>Slam</option>
+            <option>Techno</option>
+            <option>Afro beat</option>
+            <option>Classique</option>
+            <option>Punk</option>
+            <option>Hardcore rock</option>
+            <option>Hardcore techno</option>
+            <option>Pop</option>
+            <option>Folk</option>
+            <option>World</option>
+        </datalist>
+    </form>
+    <h2 class="title">Shape shifting</h2>
+    <input id="shape_shifter" type="range" min="100" max="500" value="250" step="1">
+    <div id="circle" class="circle">
+        <span class="size">250</span>
+        <span>px</span>
+    </div>
 </body>
+
 </html>

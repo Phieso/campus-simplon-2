@@ -8,7 +8,7 @@ const nestedLoops = (function nestedLoops() {
 
     const arrNested = [
         ["a", "b", "c", "d"],
-        [10, 20, 30, 40],
+        [10, 20, 30, 40, 50, 123, 333],
         [true, false, false, true]
     ];
     // parcourir le premier tableau...

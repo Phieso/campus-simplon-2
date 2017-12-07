@@ -14,11 +14,21 @@
 // ############################################################################
 // Pour afficher une valeur en PHP, on utilise l'instruction echo
 
-echo "hello world";
+echo "hello PHP";
 echo "<p>" . (123 + 23) . "</p>";
 echo '<p>retrouvez la documentation du language sur
 <a href="http://php.net/docs.php" target="_blank">ce site</a></p>';
 echo "<hr>";
+
+// ############################################################################
+
+// fonctions natives de déboguage
+
+// void var_dump ( mixed $expression [, mixed $... ] )
+// mixed print_r ( mixed $expression [, bool $return = false ] )
+
+// NOTE : voir fonctions customs debug et debugX plus bas, section fonctions
+
 // ############################################################################
 // les types de données
 // http://php.net/manual/fr/language.types.php
@@ -32,8 +42,39 @@ echo "<hr>";
 // NULL
 // Ressources
 
-// ############################################################################
+/*
+Opérateur
+=	  affectation
+==	  comparaison de valeur
+===	  comparaison de valeur et de type
+!=	  différent de
+!	  n'est pas
+>	  supérieur à
+<	  inférieur à
+>=	  supérieur ou égal à
+<=	  inférieur ou égal à
+&&    ET (AND)
+||    OU (OR)
+XOR	  OU exclusif
+*/
 
+echo "<p>#### OPERATEURS #####</p>";
+var_dump(1 == "1.0");
+var_dump(1 === "1.0");
+var_dump(1 == "1");
+var_dump(1 !== 1);
+var_dump(1 == true);
+var_dump(0 == true);
+var_dump(0 == false);
+var_dump(0 === false);
+echo '<p>---XOR---</p>';
+var_dump(true XOR true);   // false
+var_dump(false XOR false); // false
+var_dump(true XOR false);  // true
+var_dump(false XOR true);  // true
+echo "<hr>";
+
+// ############################################################################
 // connaître le type d'une valeur
 // string gettype ( mixed $var )
 
@@ -72,53 +113,32 @@ echo "<br>";
 echo 'Avec des guillemets simples, une variable est $v2';
 echo "<hr>";
 
+// ############################################################################
 // échapper un caractère
-$ma_phrase = 'Je suis un texte contenant une apostrophe t\'as vu';
+//
+$ma_classe = "module";
+$ma_phrase = 'On échappe l\'apostrophe avec backslash... mais aussi =><br><br>';
+$ma_balise = "<div class=\"$ma_classe\">ma div peut contenir une classe CSS 'variable'</div>";
 echo $ma_phrase;
+echo $ma_balise;
+
+echo "<hr>";
 
 // ############################################################################
 // Constantes
 
 define("c1", "je suis la constante c1");
-define("foo", "fooooooo");
-define("bar", "baaaaaar");
+define("foo", "foo");
+define("bar", "baar");
 echo "Valeur des constantes => <br>";
 echo "<ul>";
-  echo "<li>" . c1 . "</li>";
+  echo "<li>" . c1  . "</li>";
   echo "<li>" . foo . "</li>";
   echo "<li>" . bar . "</li>";
 echo "</ul>";
 
 echo "<hr>";
 
-// ############################################################################
-
-// outils de déboguage
-
-// void var_dump ( mixed $expression [, mixed $... ] )
-// mixed print_r ( mixed $expression [, bool $return = false ] )
-
-
-/* TD1 => utiliser print_r et/ou var_dump pour afficher le type des variables
-déclarées ci-dessus */
-
-echo "<pre>";
-var_dump($bool);
-var_dump($str);
-var_dump($int);
-var_dump($dec);
-echo "</pre>";
-echo "<hr>";
-echo "<pre>";
-print_r($bool);
-echo "</pre>";
-echo "<pre>";
-print_r($str);
-echo "</pre>";
-echo "<pre>";
-print_r($int);
-echo "</pre>";
-echo "<pre>";
 
 // ############################################################################
 
@@ -150,6 +170,7 @@ echo "<hr>";
 // ############################################################################
 
 // la portée des variables (block scope)
+// les variables en PHP se comportent comme les let en JS
 
 $blok_scoped = "je suis block-scoped";
 
@@ -194,6 +215,28 @@ function myTimeStamp() {
 $mon_temps_unix_la_maintenant = myTimeStamp();
 echo $mon_temps_unix_la_maintenant;
 echo "<hr>";
+
+function debug($val, $mode = 0) {
+    echo '<pre style="background:#' . substr(md5(rand()), 0, 6) . '">';
+    if ($mode === 1) {
+        var_dump($val);
+    } else {
+        print_r($val);
+    }
+    echo "</pre>";
+}
+
+function debugX($val, $mode = 0) {
+    echo '<pre style="background:#' . substr(md5(rand()), 0, 6) . '">';
+    if ($mode === 1) {
+        var_dump($val);
+    } else {
+        print_r($val);
+    }
+    echo "</pre>";
+    exit;
+}
+
 
 // ############################################################################
 
@@ -252,10 +295,8 @@ $b1 =  (boolean) NULL;
 $f1 =  (float) $str1;
 $o1 =  (object) array("type" => "cat", "name" => "kitty", "color" => "white");
 // etc ...
-var_dump($n1);
-echo "<br>";
-var_dump($b1);
-echo "<br>";
-var_dump($f1);
-echo "<br>";
-var_dump($o1);
+echo "<p>#### FONCTIONS DEBUG/DEBUGX #####</p>";
+debug($n1);
+debug($b1);
+debug($f1);
+debug($o1);

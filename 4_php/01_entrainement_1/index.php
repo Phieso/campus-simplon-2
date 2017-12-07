@@ -213,9 +213,19 @@ function myTimeStamp() {
 
 // echo myTimeStamp();
 $mon_temps_unix_la_maintenant = myTimeStamp();
-echo $mon_temps_unix_la_maintenant;
+echo "pendant ce temps, @UNIX ... <b>$mon_temps_unix_la_maintenant</b>";
 echo "<hr>";
 
+/**
+ * Fonction de debug provoquant la fin du programme
+ *
+ * lance print_r ou var_dump formaté sur une valeur ou expression
+ *
+ * @since 0.1
+ * @param  mixed  $val  valeur ou expression à deboguer
+ * @param  integer $mode [description]
+ * @return void    RAS
+ */
 function debug($val, $mode = 0) {
     echo '<pre style="background:#' . substr(md5(rand()), 0, 6) . '">';
     if ($mode === 1) {
@@ -226,6 +236,17 @@ function debug($val, $mode = 0) {
     echo "</pre>";
 }
 
+/**
+ * Fonction de debug provoquant la fin du programme
+ *
+ * lance print_r ou var_dump formaté sur une valeur ou expression
+ * puis lance une instruction exit
+ *
+ * @since 0.1
+ * @param  mixed   $val  valeur ou expression à deboguer
+ * @param  integer   $mode si précisé, lance var_dump, sinon print_r
+ * @return void    RAS
+ */
 function debugX($val, $mode = 0) {
     echo '<pre style="background:#' . substr(md5(rand()), 0, 6) . '">';
     if ($mode === 1) {
@@ -297,6 +318,7 @@ $o1 =  (object) array("type" => "cat", "name" => "kitty", "color" => "white");
 // etc ...
 echo "<p>#### FONCTIONS DEBUG/DEBUGX #####</p>";
 debug($n1);
-debug($b1);
+debug($b1, 1);
 debug($f1);
 debug($o1);
+debug($o1, 1);

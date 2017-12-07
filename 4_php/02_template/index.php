@@ -1,7 +1,7 @@
 <?php include("inc/head.php") ?>
 
 <div id="app">
-    <h1 class="title">Home</h1>
+    <h1 class="title"><?php echo $config->title_home ?></h1>
     <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nostrum debitis, neque adipisci maiores, blanditiis nesciunt eveniet non fuga alias quisquam excepturi quos? Reiciendis ex labore quia aliquam consequuntur adipisci quam omnis error ad pariatur, soluta laboriosam accusantium itaque quod veniam odio, assumenda dolore praesentium eveniet.
     </p>

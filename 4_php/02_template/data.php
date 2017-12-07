@@ -3,9 +3,10 @@
 include "libs/utility.php";
 
 $config = (object)[];
-$config->tpl_title = "Template 1";
+$config->title_app = "Template";
+$config->title_home = "Home";
 
-function getNames() {
+function getPersos() {
     return [
         ["Ralph", 0],
         ["Seya", 1],
@@ -36,7 +37,7 @@ function setUsers($names, $genres) {
 }
 
 function getUsersAjax() {
-    $users = setUsers(getNames(), getGenres());
+    $users = setUsers(getPersos(), getGenres());
     // debug($users);
     echo json_encode($users);
 }

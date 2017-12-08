@@ -1,12 +1,13 @@
 <?php
-
 include "libs/utility.php";
 
 $config = (object)[];
-$config->title_app = "Template";
-$config->title_home = "Home";
+$config->title_app = "Template I";
+$config->title_home = "Home (async)";
+$config->title_about = "About (sync)";
+$config->title_contact = "Contact (sync/async)";
 
-function getPersos() {
+function getNames() {
     return [
         ["Ralph", 0],
         ["Seya", 1],
@@ -26,23 +27,29 @@ function getGenres() {
     ];
 }
 
-function setUsers($names, $genres) {
-    $users = null;
-    for ($i = 0; $i <  count($names); $i += 1) {
+function setPersos($persos, $genres) {
+    $users = array();
+    for ($i = 0; $i < count($persos); $i += 1) {
+        // count en php === persos.length en js
         $users[] = (object)[];
-        $users[$i]->name = $names[$i][0];
-        $users[$i]->genre = $genres[$names[$i][1]];
+        // équivaut à =>
+        // $users[] = new stdClass();
+        $users[$i]->name = $persos[$i][0];
+        $users[$i]->genre = $genres[$persos[$i][1]];
     }
     return $users;
 }
 
+function getUsers() {
+    return setPersos(getNames(), getGenres());
+}
+
 function getUsersAjax() {
-    $users = setUsers(getPersos(), getGenres());
-    // debug($users);
+    $users = setPersos(getNames(), getGenres());
     echo json_encode($users);
 }
 
 
-if (isset($_GET["ajax"]) && $_GET["ajax"] === "users") {
+if (isset($_GET["ajax"]) && $_GET["ajax"] === "persos") {
     getUsersAjax();
 }

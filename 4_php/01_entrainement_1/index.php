@@ -43,7 +43,8 @@ echo "<hr>";
 // Ressources
 
 /*
-Opérateur
+Opérateurs
+
 =	  affectation
 ==	  comparaison de valeur
 ===	  comparaison de valeur et de type
@@ -56,6 +57,7 @@ Opérateur
 &&    ET (AND)
 ||    OU (OR)
 XOR	  OU exclusif
+ternaire   (expression) ? val : val
 */
 
 echo "<p>#### OPERATEURS #####</p>";
@@ -87,7 +89,7 @@ echo "<hr>";
 // Variables
 
 $bool = true || false;
-$str = 'je suis une string';
+$str = 'Je suis une chaîne de caractères';
 $int = 100;
 $dec = 1.1;
 $arr = array(1, 2, 3, 4); // OU [val1, val2, val3]
@@ -100,11 +102,20 @@ $arr_multi_dimension = array(
 $obj = new stdClass();
 $obj->prop1 = "ola !";
 $obj->prop2 = "salut !";
-$obj->prop3 = array("yes", "papa", "!");
+$obj->prop3 = array("yes", "no", "maybe");
+// PHP 7 =>
+# @PHPDOC
+$obj1 = new \stdClass; // Instantiate stdClass object
+$obj2 = new class{}; // Instantiate anonymous class
+$obj3 = (object)[]; // Cast empty array to object
+// un exemple habituel depuis le début ... ^^
+$cat = new stdClass();
+$cat->name = "kitty";
+$cat->color = "roux";
 $vide = null;
 
 // ############################################################################
-
+// IMPORTANT
 // Différences entre guillemets doubles et simples
 $v1 = "interprétée...";
 $v2 = "non interprétée...";
@@ -165,12 +176,13 @@ $non_initialisée;
 
 echo "Par défaut, une variable vaut Undefined. Mais undefined n'est pas un type en PHP";
 echo $non_initialisée;
+
 echo "<hr>";
 
 // ############################################################################
 
 // la portée des variables (block scope)
-// les variables en PHP se comportent comme les let en JS
+// les variables en PHP se comportent comme let en JS
 
 $blok_scoped = "je suis block-scoped";
 
@@ -179,10 +191,11 @@ if (false) {
 
 } else {
   echo "je suis dans le else";
-
+  $val_ici = $blok_scoped;
+  $foo = "bar";
 }
 
-echo 'Valeur de la var $test => ' . $test; //
+echo 'Valeur de la var $test => ' . $foo; //
 echo "<hr>";
 
 // testez vous-même en passant le paramètre du if à true ... que se passe-t'il ?
@@ -197,7 +210,7 @@ function test() {
 
 test();
 
-function hello($qui) {
+function hello($qui = "user anonyme") {
   echo "<p>Hello <b>" . $qui . " </b>!</p>";
 }
 
@@ -213,13 +226,14 @@ function myTimeStamp() {
 
 // echo myTimeStamp();
 $mon_temps_unix_la_maintenant = myTimeStamp();
-echo "pendant ce temps, @UNIX ... <b>$mon_temps_unix_la_maintenant</b>";
+echo "Pendant ce temps, @UNIX ... <b>$mon_temps_unix_la_maintenant</b>";
+
 echo "<hr>";
 
 /**
- * Fonction de debug provoquant la fin du programme
+ * Fonction de debug
  *
- * lance print_r ou var_dump formaté sur une valeur ou expression
+ * Affiche un print_r ou var_dump formaté sur une valeur ou expression
  *
  * @since 0.1
  * @param  mixed  $val  valeur ou expression à deboguer
@@ -239,7 +253,7 @@ function debug($val, $mode = 0) {
 /**
  * Fonction de debug provoquant la fin du programme
  *
- * lance print_r ou var_dump formaté sur une valeur ou expression
+ * Affiche un print_r ou var_dump formaté sur une valeur ou expression
  * puis lance une instruction exit
  *
  * @since 0.1
@@ -309,12 +323,16 @@ echo "<hr>";
 // ############################################################################
 // conversion de type (cast)
 
-$str1 = "1";
-$str1 = "1.23";
-$n1 =  (int) $str;
+$strnb1 = "1";
+$strnb2 = "1.23";
 $b1 =  (boolean) NULL;
-$f1 =  (float) $str1;
-$o1 =  (object) array("type" => "cat", "name" => "kitty", "color" => "white");
+$n1 =  (int) $strnb2;
+$f1 =  (float) $strnb1;
+$o1 =  (object) array(
+    "type" => "cat",
+    "name" => "kitty",
+    "color" => "white"
+);
 // etc ...
 echo "<p>#### FONCTIONS DEBUG/DEBUGX #####</p>";
 debug($n1);

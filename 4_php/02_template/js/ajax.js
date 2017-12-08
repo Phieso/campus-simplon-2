@@ -1,25 +1,23 @@
-/* jshint esversion:6 */
+/* jshint esversion: 6 */
 
-const moduleAjax = (function () {
+const ajax = (function ajax() {
     "use strict";
 
     function postData() {
-
+        // coder ici ...
+        // pour poster des données vers le serveur
     }
 
-    function getData() {
+    function getData(url, queryParam, clbk) {
         const xhr = new XMLHttpRequest();
-        // const url = window.location.href || document.URL;
-        const url = "data.php";
-        xhr.open("GET", url + "?ajax=users");
-        // console.log(url);
+
+        xhr.open("GET", url + `?${ queryParam }`);
+
         xhr.onload = function(evt) {
             // console.log(evt);
-            let res;
             if (this.response) {
-                res = JSON.parse(this.response);
+                clbk(JSON.parse(this.response));
             }
-            console.log(res);
         };
 
         xhr.send();

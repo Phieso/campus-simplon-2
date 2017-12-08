@@ -14,7 +14,6 @@ const exo1 = (function exo1() {
         {nom: "baskets grandes tailles", tailleDispo: [46, 47, 48, 49, 50]},
     ];
 
-
     const parcourirProduits = function parcourirProduits() {
         for (let i = 0; i < produits.length; i += 1) {
             let div = document.createElement("div");

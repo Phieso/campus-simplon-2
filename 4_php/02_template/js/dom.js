@@ -1,16 +1,29 @@
-/* jshint esversion:6 */
+/* jshint esversion: 6 */
 
 var dom = (function getDOMObjects() {
     "use strict";
+    var elements;
 
-    const app = document.getElementById("app");
-    const getDataPHP = document.getElementById("get_data_php");
-    const getDataAPI = document.getElementById("get_data_api");
+    function getElements(clbk) {
+        return elements;
+    }
+
+    function init(clbk) {
+        elements = {
+            app: document.getElementById("app"),
+            nav: {
+                elem: document.getElementById("grid_nav"),
+                items: document.querySelectorAll("#grid_nav .item"),
+            },
+            getDataPHP: document.getElementById("get_data_php"),
+            getDataAPI: document.getElementById("get_data_api"),
+        };
+        clbk(elements);
+    }
 
     return {
-        app: app,
-        getDataPHP: getDataPHP,
-        getDataAPI: getDataAPI,
+        init: init, // ou simplement init (es6)
+        getElements: getElements
     };
 
 }());

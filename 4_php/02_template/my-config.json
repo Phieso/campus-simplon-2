@@ -1,6 +1,6 @@
 {
     "database": {
-        "dbname": "ma-db",
+        "name": "ma-base",
         "password": "",
         "username": "root"
     },
@@ -9,32 +9,41 @@
     "pages": {
         "notfound": {
             "title": "page not found",
-            "tpl": "pages/404.php"
+            "html": "pages/404.php"
         },
         "home": {
             "title": "hello template",
-            "tpl": "pages/home.php",
+            "html": "pages/home.php",
             "mods": []
         },
         "about": {
             "title": "à propos",
-            "tpl": "pages/about.php",
+            "html": "pages/about.php",
             "mods": []
         },
         "contact": {
             "title": "contactez-nous",
-            "tpl": "pages/contact.php",
+            "html": "pages/contact.php",
             "mods": []
         },
-        "personnages": {
-            "title": "Gallerie de personnages",
-            "tpl": "pages/personnages.php",
+        "sync_async": {
+            "title": "Sync vs Async",
+            "html": "pages/sync_async.php",
             "mods": ["personnages"]
+        },
+        "maps": {
+            "title": "google maps",
+            "html": "pages/maps.php",
+            "mods": []
+        },
+        "musique": {
+            "title": "musique",
+            "html": "pages/musique.php",
+            "mods": []
         },
         "profil": {
             "title": "dashboard",
-            "route": "admin/dashboard",
-            "tpl": "pages/admin/profile.php",
+            "html": "pages/admin/profile.php",
             "mods": []
         }
     },
@@ -42,15 +51,16 @@
         "main": [
             "home",
             "about",
-            "personnages",
+            "sync_async",
             "contact",
+            "maps",
             "musique",
             "profil"
         ]
     },
     "css": [
         "node_modules/font-awesome/css/font-awesome.min.css",
-        "css/styles.css",
+        "styles/styles.css",
         "modules/personnages/persos.css",
         "modules/navbar/navbar.css",
         "modules/burger/burger.css"
@@ -58,6 +68,7 @@
     "js": [
         "js/app.js",
         "js/dom.js",
+        "modules/cafes/cafes.js",
         "modules/personnages/persos.js",
         "modules/burger/burger.js",
         "modules/navbar/navbar.js",

@@ -1,5 +1,5 @@
 /* jshint esversion: 6 */
-const navbar = (function navbar() {
+const blank = (function blank() {
     "use strict";
 
     function init() {
@@ -9,5 +9,5 @@ const navbar = (function navbar() {
     return {
         init
     };
-    
+
 }());

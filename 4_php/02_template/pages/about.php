@@ -5,10 +5,10 @@
     Codez un module page-ajax (html/css/js).<br>
     Créer des liens ou bouttons sur cette page.<br>
     Au click sur chacun, charger en asynchrone le contenu d'un fichier html.<br>
-    Le contenu apparaît dans la page sans rechargement.<br>
-    Indiquer la route du fichier.html avec un attribut html5 custom sur chaque lien.
+    Le contenu apparaît dans la page sans rechargement.
+    <br><br><b>Indices JS</b> : events, objet xhr (new, send, load), callback, insertion dans document (DOM).<br>
     <br><br><b>Structure du module:</b><br>
     <span>page-ajax/page-ajax.html</span><br>
-    <span>page-ajax/page-ajax.css</span><br>
     <span>page-ajax/page-ajax.js</span><br>
+    <span>[ page-ajax/page-ajax.css ]</span><br>
 </p>

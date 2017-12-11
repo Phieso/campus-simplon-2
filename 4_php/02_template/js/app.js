@@ -2,19 +2,16 @@
 
 window.addEventListener("DOMContentLoaded", function app() {
     "use strict";
+    /* ci-dessous, les modules js à disposition */
     // console.log(persos);
+    // console.log(navbar);
     // console.log(dom);
     // console.log(ajax);
     dom.init(function(elements) {
-
+        /* on a récupéré les éléments du DOM */
+        /* ready to go ! initialisation des modules ...  */
         burger.init(elements.navbar);
         persos.init(elements);
-
-        if (elements.getDataAPI)
-        elements.getDataAPI.onclick = function () {
-            ajax.getData("https://opendata.paris.fr/api/records/1.0/search/?dataset=liste-des-cafes-a-un-euro&rows=10000&facet=arrondissement", function (data) {
-                console.log(data);
-            });
-        };
+        cafes.init(elements);
     });
 });

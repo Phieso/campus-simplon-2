@@ -1,7 +1,7 @@
 /* jshint esversion: 6 */
-const navbar = (function navbar() {
+const carrousel = (function carrousel() {
     "use strict";
-
+    
     function init() {
 
     }
@@ -9,5 +9,5 @@ const navbar = (function navbar() {
     return {
         init
     };
-    
+
 }());

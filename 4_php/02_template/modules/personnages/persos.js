@@ -3,12 +3,14 @@
 var persos = (function persos() {
     "use strict";
 
-    function createList(persos, elements) {
+    var persosList;
+
+    function createList(elements) {
         resetList();
         const ul = document.createElement("ul");
         ul.className = "list persos";
 
-        persos.forEach(function(p) {
+        persosList.forEach(function(p) {
             const li = document.createElement("li");
             li.className = "perso";
             li.innerHTML += `
@@ -22,7 +24,7 @@ var persos = (function persos() {
     }
 
     function resetList() {
-        const persos = document.querySelector(".persos");
+        const persos = document.querySelector("#personnages .persos");
         if (persos) {
             persos.remove();
         }
@@ -31,9 +33,9 @@ var persos = (function persos() {
     function init(elements) {
         if (elements.getDataPHP)
         elements.getDataPHP.onclick = function handleClick() {
-            var resultat = ajax.getData("data.php?ajax=persos",
-            function (data) {
-                createList(data, elements);
+            ajax.getData("data.php?ajax=persos", function (data) {
+                persosList = data;
+                createList(elements);
             });
         };
     }

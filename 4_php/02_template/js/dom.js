@@ -15,6 +15,7 @@ var dom = (function getDOMObjects() {
                 elem: document.getElementById("grid_nav"),
                 items: document.querySelectorAll("#grid_nav .item"),
             },
+            navbar: document.getElementById("navbar"),
             getDataPHP: document.getElementById("get_data_php"),
             getDataAPI: document.getElementById("get_data_api"),
         };

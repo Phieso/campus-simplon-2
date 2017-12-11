@@ -1,30 +1,20 @@
 /* jshint esversion: 6 */
 
-var app = (function app() {
+window.addEventListener("DOMContentLoaded", function app() {
     "use strict";
-    console.log(persos);
-    console.log(dom);
-    console.log(ajax);
+    // console.log(persos);
+    // console.log(dom);
+    // console.log(ajax);
+    dom.init(function(elements) {
 
-    window.addEventListener("DOMContentLoaded", function initApp() {
+        burger.init(elements.navbar);
+        persos.init(elements);
 
-        dom.init(function(elements) {
-
-            console.log(dom.getElements());
-
-            if (elements.getDataPHP)
-            elements.getDataPHP.onclick = function () {
-                ajax.getData("data.php", "ajax=persos", function (data) {
-                    persos.createList(data, elements);
-                });
-            };
-
-            if (elements.getDataAPI)
-            elements.getDataAPI.onclick = function () {
-                ajax.getData("", "", function (data) {
-                    console.log(data);
-                });
-            };
-        });
+        if (elements.getDataAPI)
+        elements.getDataAPI.onclick = function () {
+            ajax.getData("https://opendata.paris.fr/api/records/1.0/search/?dataset=liste-des-cafes-a-un-euro&rows=10000&facet=arrondissement", function (data) {
+                console.log(data);
+            });
+        };
     });
-}(dom));
+});

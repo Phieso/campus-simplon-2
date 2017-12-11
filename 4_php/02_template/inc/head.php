@@ -1,35 +1,17 @@
-<?php include("data.php") ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="<?php echo $config->lang ?>">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title><?php echo $config->title_app ?></title>
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-    <script src="js/dom.js"></script>
-    <script src="js/persos.js"></script>
-    <script src="js/ajax.js"></script>
-    <script src="js/app.js"></script>
+    <title><?php echo $page->title ?></title>
+
+    <?php foreach($config->css as $css) {
+        echo "<link rel=\"stylesheet\" href=\"$css\">";
+    } ?>
+
+    <?php foreach($config->js as $js) {
+        echo "<script src=\"$js\"></script>";
+    } ?>
 </head>
 <body>
-    <header id="grid_header">
-        <h2 class="title">
-            <i class="clickable fa fa-bars fa-lg"></i>
-            <span><?php echo $config->title_app ?></span>
-        </h2>
-        <nav id="grid_nav">
-            <ul class="list">
-                <li class="item">
-                    <a class="link" href="index.php">home (async)</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="about.php">about (sync)</a>
-                </li>
-                <li class="item">
-                    <a class="link" href="contact.php">contact (sync/async)</a>
-                </li>
-            </ul>
-        </nav>
-    </header>

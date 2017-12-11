@@ -1,5 +1,6 @@
 * {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
 }
 html {
@@ -7,10 +8,12 @@ html {
 }
 body {
     font-family: Avenir;
+    position: relative;
 }
 .title {
     color: dodgerblue;
     font-size: 1.3rem;
+    margin: 20px 0;
 }
 .input[type=text] {
     box-shadow: 0px 0.1px 2px 0.9px #696666;
@@ -37,10 +40,17 @@ body {
 .clickable {
     cursor: pointer;
 }
+.f-row, .f-col {
+    display: flex;
+}
+.f-col {
+    flex-direction: column;
+}
 p {
     box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
     border-radius: .1rem;
-    max-width: 400px;
+    max-width: 720px;
+    margin-bottom: 20px;
     padding: 10px;
     text-align: justify;
 }
@@ -66,6 +76,19 @@ a:hover {
 li {
     list-style: none;
 }
+#grid_header {
+    border-bottom: 2px solid dodgerblue;
+    padding: 0 20px;
+    position: fixed;
+    width: 100%;
+    background: white;
+    z-index: 2;
+}
+#grid_header > .f-row {
+    justify-content: space-between;
+    align-items: center;
+    height: 40px;
+}
 #grid_nav .list {
     display: flex;
 }
@@ -73,40 +96,13 @@ li {
     flex: 1;
 }
 #app {
-    padding-top: 10px;
-    padding-bottom: 40px;
+    position: relative;
+    top: 65px;
+    padding: 10px 20px 40px;
+    min-height: 50vh;
 }
-.controls {
-    display: flex;
-    flex-wrap: wrap;
-    min-width: 320px;
-    max-width: 640px;
-    margin: 80px 0;
-    justify-content: space-between;
-}
-
-.controls input[type=text] {
-    margin-bottom: 10px;
-    width: 100%;
-}
-
-.controls .btn {
-    flex: 0 0 32%;
-}
-.persos {
-    display: flex;
-    flex-wrap: wrap;
-}
-.persos .perso {
-    border: solid;
-    border-radius: .3rem;
-    cursor: pointer;
-    font-size: .9rem;
-    margin: 0 5px 5px 0;
-    padding: 5px;
-    text-align: center;
-    width: calc(33% - 5px);
-}
-.persos .perso:hover .name {
-    color: darkorange;
+#grid_footer {
+    padding: 0 20px;
+    position: relative;
+    top: 65px;
 }

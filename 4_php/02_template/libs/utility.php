@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Fonction de debug provoquant la fin du programme
+ * Fonction de debug
  *
  * Affiche un print_r ou var_dump formaté sur une valeur ou expression
  *

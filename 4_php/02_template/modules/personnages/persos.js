@@ -6,7 +6,7 @@ var persos = (function persos() {
     function createList(persos, elements) {
         resetList();
         const ul = document.createElement("ul");
-        ul.className = "persos";
+        ul.className = "list persos";
 
         persos.forEach(function(p) {
             const li = document.createElement("li");
@@ -18,7 +18,7 @@ var persos = (function persos() {
             ul.appendChild(li);
         });
 
-        elements.app.appendChild(ul);
+        elements.app.querySelector("#personnages").appendChild(ul);
     }
 
     function resetList() {
@@ -28,8 +28,19 @@ var persos = (function persos() {
         }
     }
 
+    function init(elements) {
+        if (elements.getDataPHP)
+        elements.getDataPHP.onclick = function handleClick() {
+            var resultat = ajax.getData("data.php?ajax=persos",
+            function (data) {
+                createList(data, elements);
+            });
+        };
+    }
+
     return {
-        createList: createList
+        createList: createList,
+        init: init
     };
 
 }());

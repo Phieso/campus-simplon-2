@@ -8,15 +8,16 @@ const ajax = (function ajax() {
         // pour poster des données vers le serveur
     }
 
-    function getData(url, queryParam, clbk) {
+    function getData(url, clbk) {
         const xhr = new XMLHttpRequest();
-
-        xhr.open("GET", url + `?${ queryParam }`);
+        console.log(xhr);
+        xhr.open("GET", url);
 
         xhr.onload = function(evt) {
             // console.log(evt);
             if (this.response) {
                 clbk(JSON.parse(this.response));
+
             }
         };
 

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Avenir;
+            font-size: 16px;
+        }
+        .title {
+            color: dodgerblue;
+            font-size: 1.3rem;
+        }
+        .input[type=text] {
+            box-shadow: 0px 0.1px 2px 0.9px #696666;
+            border: none;
+            padding: 5px 10px 5px 20px;
+        }
+        .btn {
+            align-items: center;
+            background-color: transparent;
+            border: 1px solid;
+            border-radius: .3rem;
+            cursor: pointer;
+            display: inline-flex;
+            height: 32px;
+            justify-content: center;
+            min-width: 120px;
+        }
+        .btn:hover {
+            color: white;
+            background-color: dodgerblue;
+        }
+        p {
+            box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+            border-radius: .1rem;
+            max-width: 400px;
+            padding: 10px;
+            text-align: justify;
+        }
+        p:empty {
+            display: none;
+        }
+        table {
+          border-collapse: collapse;
+        }
+        td {
+          border: 2px solid black;
+          height: 42px;
+          width: 42px;
+          text-align: center;
+        }
+        td:nth-child(odd) {
+          background: dodgerblue;
+          color: white;
+        }
+        #exo1 {
+          display: flex;
+          flex-wrap: wrap;
+        }
+        #exo1 .titre {
+            font-size: 1.2rem;
+        }
+        #exo1 .produit {
+          flex: 1
+        }
+    </style>
+    <script src="app.js"></script>
+</head>
+<body>
+    <h1 class="title">Mon premier appel AJAX</h1>
+    <button id="do_ajax" class="btn">do ajax !</button>
+    <button id="get_cafe_1euro" class="btn">café 1 euro !</button>
+</body>
+</html>

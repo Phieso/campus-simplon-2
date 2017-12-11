@@ -1,0 +1,17 @@
+# on active le module de réécriture d'url
+RewriteEngine On
+
+# l'index du repertoire est index.php
+DirectoryIndex index.php
+
+# la base de réécriture est le dossier courant
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond $0#%{REQUEST_URI} ([^#]*)#(.*)\1$
+RewriteRule ^.*$ %2index.php [QSA,L]
+
+
+# on retire l'extension des fichiers dans l'url
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^([^\.]+)$ $1.html [NC,L]

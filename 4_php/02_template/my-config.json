@@ -1,0 +1,66 @@
+{
+    "database": {
+        "dbname": "ma-db",
+        "password": "",
+        "username": "root"
+    },
+    "lang": "fr",
+    "app_title": "template I",
+    "pages": {
+        "notfound": {
+            "title": "page not found",
+            "tpl": "pages/404.php"
+        },
+        "home": {
+            "title": "hello template",
+            "tpl": "pages/home.php",
+            "mods": []
+        },
+        "about": {
+            "title": "à propos",
+            "tpl": "pages/about.php",
+            "mods": []
+        },
+        "contact": {
+            "title": "contactez-nous",
+            "tpl": "pages/contact.php",
+            "mods": []
+        },
+        "personnages": {
+            "title": "Gallerie de personnages",
+            "tpl": "pages/personnages.php",
+            "mods": ["personnages"]
+        },
+        "profil": {
+            "title": "dashboard",
+            "route": "admin/dashboard",
+            "tpl": "pages/admin/profile.php",
+            "mods": []
+        }
+    },
+    "nav": {
+        "main": [
+            "home",
+            "about",
+            "personnages",
+            "contact",
+            "musique",
+            "profil"
+        ]
+    },
+    "css": [
+        "node_modules/font-awesome/css/font-awesome.min.css",
+        "css/styles.css",
+        "modules/personnages/persos.css",
+        "modules/navbar/navbar.css",
+        "modules/burger/burger.css"
+    ],
+    "js": [
+        "js/app.js",
+        "js/dom.js",
+        "modules/personnages/persos.js",
+        "modules/burger/burger.js",
+        "modules/navbar/navbar.js",
+        "js/ajax.js"
+    ]
+}

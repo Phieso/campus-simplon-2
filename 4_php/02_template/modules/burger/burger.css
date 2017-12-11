@@ -1,0 +1,6 @@
+.burger:hover {
+    color: darkorange;
+}
+.burger.is-active {
+    color: darkorange;
+}

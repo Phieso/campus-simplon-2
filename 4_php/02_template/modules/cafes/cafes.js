@@ -7,13 +7,16 @@ const cafes = (function cafes() {
         listCafes.forEach(function(cafe) {
             // console.log(cafe); // chaque objet café
             const li = document.createElement("li");
-            li.className = "item cafe";
+            li.className = "clickable item cafe";
             li.innerHTML = `
                 <h3 class="title">${cafe.fields.nom_du_cafe}</h3>
                 <p>
                     ${cafe.fields.adresse},  ${cafe.fields.arrondissement}
                 </p>
             `;
+            li.onclick = function() {
+                console.log("click");
+            };
             listElem.appendChild(li);
         });
     }

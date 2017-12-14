@@ -1,0 +1,11 @@
+#map {
+  height: 50vh;
+}
+.map-controls input {
+  width: 320px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.map-controls .btn {
+  width: 120px;
+}

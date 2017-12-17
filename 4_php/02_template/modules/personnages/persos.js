@@ -3,9 +3,9 @@
 var persos = (function persos() {
     "use strict";
 
-    var persosList;
+    var persosBackup, persosList, elements;
 
-    function createList(elements) {
+    function createList() {
         resetList();
         const ul = document.createElement("ul");
         ul.className = "list persos";
@@ -30,14 +30,43 @@ var persos = (function persos() {
         }
     }
 
-    function init(elements) {
-        if (elements.getDataPHP)
-        elements.getDataPHP.onclick = function handleClick() {
-            ajax.getData("data.php?ajax=persos", function (data) {
-                persosList = data;
-                createList(elements);
-            });
-        };
+    function init(domElems) {
+
+        elements = domElems;
+
+        if (elements.getDataPHP) {
+          elements.getDataPHP.onclick = function handleClick() {
+              ajax.getData("data.php?ajax=persos", function (data) {
+                  persosBackup = data;
+                  persosList = data;
+                  createList();
+              });
+          };
+        }
+
+        if (elements.filter.persos) {
+          elements.filter.persos.onkeyup = function filterPersos(evt) {
+
+              if (!persosList) return;
+
+              if (evt.code === "Backspace") {
+                persosList = persosBackup;
+              }
+
+              const val = this.value.toLowerCase();
+
+              if (val) {
+                persosList = persosList.filter(function(p) {
+                  return p.name.toLowerCase().match(val) || p.genre.toLowerCase().match(val);
+                });
+
+              } else {
+                persosList = persosBackup;
+              }
+
+              createList();
+          };
+        }
     }
 
     return {

@@ -13,6 +13,7 @@ window.addEventListener("DOMContentLoaded", function app() {
         burger.init(elements.navbar);
         persos.init(elements);
         cafes.init(elements);
+        contact.init(elements);
 
         const c1 = carrousel.add({
           target: document.getElementById("carrousel1"),

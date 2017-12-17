@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="carrousel.css">
+  <script src="carrousel.js"></script>
+  <script>
+    window.onload = function() {
+      var c1 = carrousel.add({
+        target: document.getElementById("p1"),
+        height: "210",
+        width: "320",
+        images: [
+          "assets/img/fractales/frac1.jpg",
+          "assets/img/fractales/frac2.jpg",
+          "assets/img/fractales/frac3.jpeg",
+        ]
+      });
+      var c2 = carrousel.add({
+        target: document.getElementById("p2"),
+        height: "230",
+        width: "230",
+        images: [
+          "assets/img/logos/logo-js.jpeg",
+          "assets/img/logos/logo-html.png",
+          "assets/img/logos/logo-css.png",
+          "assets/img/logos/logo-php.jpeg",
+          "assets/img/logos/logo-sql.png"
+        ]
+      });
+
+      console.log(c1);
+      console.log(c2);
+    }
+
+  </script>
+</head>
+<body>
+  <div id="p1" class="pane"></div>
+  <div id="p2" class="pane"></div>
+</body>
+</html>

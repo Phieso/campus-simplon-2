@@ -1,0 +1,36 @@
+.carrousel {
+  position: relative;
+  border: 1px solid;
+  margin-bottom: 10px;
+}
+.carrousel .btn {
+  cursor: pointer;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 32px;
+  border: 1px solid;
+  border-radius: .3rem;
+  top: calc(50% - 16.5px);
+  padding: 5px;
+  background: white;
+  color: black;
+  z-index: 1;
+  border: none;
+}
+.carrousel .btn:hover {
+  background: darkorange;
+  color: white;
+}
+.carrousel .btn.prev {
+  left: 5px;
+}
+.carrousel .btn.next {
+  right: 5px;
+}
+.carrousel .img {
+  display: block;
+  width: 100%;
+}

@@ -1,4 +1,6 @@
 # on active le module de réécriture d'url
+#
+Options +Indexes +FollowSymLinks
 RewriteEngine On
 
 # l'index du repertoire est index.php

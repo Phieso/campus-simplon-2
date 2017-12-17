@@ -4,3 +4,4 @@
     Exploitez l'api en réinvestissant le maximum de vos connaissances en JS.<br>
     N'hésitez pas à inclure des librairies JS tierces.
 </p>
+<?php include("modules/musique/musique.php"); ?>

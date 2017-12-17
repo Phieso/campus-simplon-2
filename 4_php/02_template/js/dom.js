@@ -15,6 +15,10 @@ var dom = (function getDOMObjects() {
                 elem: document.getElementById("grid_nav"),
                 items: document.querySelectorAll("#grid_nav .item"),
             },
+            filter: {
+              persos: document.getElementById("filter_persos"),
+              cafes: document.getElementById("filter_cafes")
+            },
             navbar: document.getElementById("navbar"),
             getDataPHP: document.getElementById("get_data_php")
         };

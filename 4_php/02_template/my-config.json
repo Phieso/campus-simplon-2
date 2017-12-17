@@ -52,8 +52,8 @@
             "home",
             "about",
             "sync_async",
-            "contact",
             "maps",
+            "contact",
             "musique",
             "profil"
         ]
@@ -62,13 +62,16 @@
         "node_modules/font-awesome/css/font-awesome.min.css",
         "styles/styles.css",
         "modules/personnages/persos.css",
+        "modules/maps/maps.css",
         "modules/navbar/navbar.css",
         "modules/burger/burger.css"
     ],
     "js": [
         "js/app.js",
         "js/dom.js",
+        "modules/maps/maps.js",
         "modules/cafes/cafes.js",
+        "modules/contact/contact.js",
         "modules/personnages/persos.js",
         "modules/burger/burger.js",
         "modules/navbar/navbar.js",

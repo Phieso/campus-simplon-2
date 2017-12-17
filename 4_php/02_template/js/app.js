@@ -13,5 +13,6 @@ window.addEventListener("DOMContentLoaded", function app() {
         burger.init(elements.navbar);
         persos.init(elements);
         cafes.init(elements);
+        contact.init();
     });
 });

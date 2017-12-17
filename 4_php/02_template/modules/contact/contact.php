@@ -8,34 +8,3 @@
   <input id="contact_sync" class="btn" type="submit" name="send_contact" value="ok sync">
   <input id="contact_async" class="btn" type="submit" name="send_contact" value="ok async">
 </form>
-<script>
-var contact = (function contact() {
-  "use strict";
-
-  function checkForm() {
-
-  }
-
-  function doAjax(evt) {
-    evt.preventDefault();
-    var xhr = new XMLHttpRequest();
-    xhr.open("POST", "libs/form.php");
-
-    xhr.onload = function(){
-        console.log(this.response);
-    }
-
-    xhr.send(new FormData(document.getElementById("contact_form")));
-  }
-
-  function init() {
-    document.getElementById("contact_async").onclick = doAjax;
-  }
-
-  return {
-    init: init
-  }
-
-}());
-
-</script>

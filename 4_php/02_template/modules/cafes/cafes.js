@@ -24,6 +24,7 @@ const cafes = (function cafes() {
     function init() {
         const btn = document.getElementById("get_cafes");
         listElem = document.getElementById("cafes_1_euros");
+
         if (btn)
         btn.onclick = function handleClick() {
             ajax.getData("https://opendata.paris.fr/api/records/1.0/search/?dataset=liste-des-cafes-a-un-euro&rows=10000&facet=arrondissement", function (data) {

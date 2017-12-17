@@ -1,0 +1,4 @@
+- faire un pull du repo campus-simplon2
+- comprendre la structure du dossier 4_php/02_template
+- lire le code depuis en commençant par index.php
+- lire my-config.json puis app.php

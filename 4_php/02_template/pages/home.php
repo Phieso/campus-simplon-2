@@ -3,6 +3,8 @@
     <b>NOTE: consulter le fichier ./my-config.json.</b><br>
     Ce fichier est utilisé notamment pour charger les fichiers JS et CSS de vos modules.
 </p>
+<div id="carrousel1"></div>
+<div id="carrousel2"></div>
 <h2 class="title">TP Burger</h2>
 <p>
     <b>Intro :</b> Modifier le CSS pour rendre le header fixe.<br><br>

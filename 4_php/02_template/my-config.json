@@ -63,7 +63,8 @@
         "styles/styles.css",
         "modules/personnages/persos.css",
         "modules/navbar/navbar.css",
-        "modules/burger/burger.css"
+        "modules/burger/burger.css",
+        "modules/carrousel/carrousel.css"
     ],
     "js": [
         "js/app.js",
@@ -71,6 +72,7 @@
         "modules/cafes/cafes.js",
         "modules/personnages/persos.js",
         "modules/burger/burger.js",
+        "modules/carrousel/carrousel.js",
         "modules/navbar/navbar.js",
         "js/ajax.js"
     ]

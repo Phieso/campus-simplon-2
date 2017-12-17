@@ -17,7 +17,10 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // debug($url);
 // conversion de l'url en array avec le séparateur '/'
 $segments = explode('/', $url);
-// debug($segments);
+debug($segments);
+echo $_SERVER['SERVER_NAME'];
+debug(parse_url($_SERVER['REQUEST_URI']));
+debug($_SERVER['REQUEST_URI']);
 // on récupère le dernier segment de l'url (nom de la page souhaitée)
 $page_name = $segments[count($segments) - 1];
 // debug($page_name);

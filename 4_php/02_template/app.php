@@ -2,34 +2,34 @@
 // on récupère le contenu de notre fichier de config en json
 // on le converti en objet PHP
 $config = json_decode(file_get_contents("my-config.json"));
+// debug($config);
 // nous incluons notre jeu de données
 include "data.php";
 // et aussi nos fonctions de debug utiles
 include "libs/utility.php";
 
-
-function filterFile($file) {
-  $pattern = '/css$|js$/';
-  return preg_match($pattern, $file) == 1;
-}
-
 function getModules($page) {
-  $filtered = array();
+  $filtered = (object)["css" => [], "js" => []];
   // nous parcourons les pages du fichier de config
-  // chaque objet $page représente une page de la config
+  // si la page courante a une propriété modules et si cette prop est un tableau
   if (isset($page->mods) && count($page->mods)) {
-    // si $page a des modules associés, on itère sur les modules
+    // alors on lance une boucle sur les modules de la page courante
     foreach ($page->mods as $mod) {
-      debug($mod);
-      $files = scandir("modules/$mod");
-      $files = array_diff($files, array('.', '..'));
-      $filtered[] = array_filter($files, "filterFile");
+      $files = scandir("modules/$mod"); // lecture du dossier du module en cours ( exemple: modules/maps )
+      $prefilter = array_diff($files, array('.', '..')); // nettoyage du résultat de scandir...
+      // debug($prefilter);
+      foreach ($prefilter as $key => $file) {
+        // on liste tous les fichiers du modules
+        if (preg_match('/js$/', $file)) {
+          $filtered->js[] =  "modules/$mod/$file"; // on garde les fichier js
+        } elseif (preg_match('/css$/', $file)) {
+          $filtered->css[] = "modules/$mod/$file"; // on garde aussi les fichiers css
+        }
+      }
     }
   }
   return $filtered;
 }
-
-getModules($config->pages);
 
 // on récupère l'url courante
 $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -37,10 +37,8 @@ $url = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 // conversion de l'url en array avec le séparateur '/'
 $segments = explode('/', $url);
 // debug($segments);
-// on récupère le dernier segment de l'url (nom de la page souhaitée)
+// on récupère le dernier segment de l'url (nom de la page souhaitée, par exemple: home )
 $page_name = $segments[count($segments) - 1];
-// debug($page_name);
-
 // isolation de la propriété config->page
 // on converti l'objet associé en array multidimensionnel
 $pages = (array)$config->pages;
@@ -54,12 +52,18 @@ if (isset($pages[$page_name])) {
         // si le fichier html de la page n'existe pas
         $page = $pages["notfound"];
     } else {
-        $page = $pages[$page_name];
-        $page_modules = getModules($page);
-          debug('$page_modules');
-          debug($page_modules);
-
+        $page = $pages[$page_name]; // cette variable est utilisée dans le template (index.php)
     }
+    // on récupères les fichiers css et js liés aux modules de la page
+    $page_modules = getModules($page);
+    // fusion dans un tableau unique des css modules avec les css globaux
+    $config->css = array_merge($config->css, $page_modules->css);
+    $config->js = array_merge($config->js, $page_modules->js);
+    // fusion dans un tableau unique des js modules avec les js globaux
+    // $config->css et $config->js sont utilisées dans le fichier inc/head.php
+    // debug('page_modules ===> ');
+    // debug($config);
+    // debug($page_modules);
 } else {
     // sinon, page non trouvée. voir pages dans my-config.json
     $page = $pages["notfound"];

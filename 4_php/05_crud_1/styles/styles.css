@@ -16,6 +16,9 @@ body {
     font-size: 1.3rem;
     margin: 20px 0;
 }
+.f-col .btn {
+    display: block;
+}
 .btn {
     align-items: center;
     background-color: transparent;
@@ -68,18 +71,26 @@ p:empty {
 table {
   border-collapse: collapse;
 }
-td {
+td, th {
   border: 2px solid black;
   height: 42px;
   width: 42px;
   text-align: center;
+padding: 8px;
 }
 a {
     text-decoration: none;
     color: inherit;
+    cursor: pointer;
+}
+label[for] {
+    cursor: pointer;
 }
 input[type=checkbox] {
   cursor: pointer;
+}
+[disabled] {
+    cursor: not-allowed;
 }
 .input,
 input[type=tel],
@@ -92,7 +103,8 @@ input[type=text] {
     font-size: 1rem;
 
 }
-form.create {
+form.create,
+form.create.bill {
   max-width: 380px;
 }
 .f-col .input,
@@ -141,19 +153,29 @@ li {
     position: relative;
     top: 42px;
 }
-
-.tabler td {
-  padding: 8px;
+.tabler {
+    margin-bottom: 40px;
+    min-width: 90%;
 }
-
 .tabler-btn {
   padding: 8px;
   font-size: 1.05rem;
   cursor: pointer;
   border-style: solid;
   border-width: 2px;
+  display: inline-block;
 }
 
+.tabler.bills  {
+    white-space: nowrap;
+}
+
+.bill .tabler-btn {
+  border-color: dodgerblue;
+}
+.bill .tabler-btn:hover {
+    background: dodgerblue;
+}
 .update .tabler-btn {
   border-color: #B4D455;
 }
@@ -176,4 +198,12 @@ li {
   border-radius: .4rem;
   padding: 20px;
   box-shadow: -0.9px 0.1px 6.1px 0.2px #B4D455;
+}
+
+form.bill:not(.is-active) {
+    display: none;
+}
+
+.is-hidden {
+    display: none;
 }

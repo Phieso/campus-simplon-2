@@ -24,17 +24,18 @@ body {
     background-color: transparent;
     border: 1px solid;
     border-radius: .3rem;
-    font-size: 1rem;
     cursor: pointer;
     display: inline-flex;
-    min-height: 32px;
+    font-size: 1rem;
     justify-content: center;
-    padding: 8px;
     margin: 20px 0;
+    min-height: 32px;
+    padding: 8px;
+    text-align: center;
 }
 .btn:hover {
-    color: white;
     background-color: dodgerblue;
+    color: white;
 }
 .clickable {
     cursor: pointer;
@@ -48,10 +49,10 @@ body {
 .controls {
     display: flex;
     flex-wrap: wrap;
-    min-width: 320px;
+    justify-content: space-between;
     max-width: 640px;
     margin: 20px 0;
-    justify-content: space-between;
+    min-width: 320px;
 }
 .controls input[type=text] {
     margin-bottom: 10px;
@@ -75,13 +76,13 @@ td, th {
   border: 2px solid black;
   height: 42px;
   width: 42px;
+  padding: 8px;
   text-align: center;
-padding: 8px;
 }
 a {
-    text-decoration: none;
     color: inherit;
     cursor: pointer;
+    text-decoration: none;
 }
 label[for] {
     cursor: pointer;
@@ -98,9 +99,9 @@ input[type=mail],
 input[type=text] {
     box-shadow: 0px 0.1px 2px 0.9px #696666;
     border: none;
-    padding: 5px 10px 5px 20px;
-    height: 36px;
     font-size: 1rem;
+    height: 36px;
+    padding: 5px 10px 5px 20px;
 
 }
 form.create,
@@ -124,16 +125,16 @@ li {
 }
 #grid_header {
     border-bottom: 2px solid dodgerblue;
+    background: white;
     padding: 0 20px;
     position: fixed;
     width: 100%;
-    background: white;
     z-index: 2;
 }
 #grid_header > .f-row {
-    justify-content: space-between;
     align-items: center;
     height: 40px;
+    justify-content: space-between;
 }
 #grid_nav .list {
     display: flex;
@@ -142,10 +143,10 @@ li {
     flex: 1;
 }
 #app {
+    min-height: 50vh;
+    padding: 10px 20px 40px;
     position: relative;
     top: 42px;
-    padding: 10px 20px 40px;
-    min-height: 50vh;
 }
 #grid_footer {
     justify-content: flex-end;
@@ -158,12 +159,12 @@ li {
     min-width: 90%;
 }
 .tabler-btn {
-  padding: 8px;
-  font-size: 1.05rem;
-  cursor: pointer;
   border-style: solid;
   border-width: 2px;
+  cursor: pointer;
   display: inline-block;
+  font-size: 1.05rem;
+  padding: 8px;
 }
 
 .tabler.bills  {
@@ -174,7 +175,7 @@ li {
   border-color: dodgerblue;
 }
 .bill .tabler-btn:hover {
-    background: dodgerblue;
+  background: dodgerblue;
 }
 .update .tabler-btn {
   border-color: #B4D455;
@@ -194,14 +195,14 @@ li {
 }
 
 .msg {
-  max-width: 380px;
   border-radius: .4rem;
-  padding: 20px;
   box-shadow: -0.9px 0.1px 6.1px 0.2px #B4D455;
+  max-width: 380px;
+  padding: 20px;
 }
 
 form.bill:not(.is-active) {
-    display: none;
+  display: none;
 }
 
 .is-hidden {

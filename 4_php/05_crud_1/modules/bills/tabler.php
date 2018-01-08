@@ -21,7 +21,7 @@
         </thead>
         <tbody id="tabler_bills_body" >
         <?php foreach ($bills as $bill) {
-            echo "<tr data-id-bill=\"$bill->id\" class=\"bill\">";
+            echo "<tr data-id-bill=\"$bill->id\" data-id-user=\"$bill->id_user\" class=\"bill\">";
 
             foreach ($bill as $prop => $val) {
                 $val = isset($val) ? $val : "N.R";

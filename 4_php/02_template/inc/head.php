@@ -14,7 +14,5 @@
         echo "<script src=\"$js\"></script>";
     } ?>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAWL51BbK6Mxy2tiUuCIEo6EY-CinUywi0&callback=maps.init"
-    async defer></script>
 </head>
 <body>

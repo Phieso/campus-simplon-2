@@ -1,15 +1,11 @@
 <h3 class="title">
     <span>Créer un nouvel utilisateur</span>
 </h3>
-<!--  syntaxe alternative de if en PHP, plus adaptée au templating -->
-<?php
-    if (isset($msg_crud)) {
-        echo "<p class=\"msg\">$msg_crud</p>";
-    }
-?>
+<?php if (isset($msg_crud)) {
+    echo "<p class=\"msg\">$msg_crud</p>";
+}?>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>"
-    class="create f-col">
+<form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>" class="create f-col">
     <input name="lastname" type="text" placeholder="nom" required>
     <input name="name" type="text" placeholder="prénom" required>
     <input name="age" type="number" placeholder="âge" class="input" min="1" max="140">

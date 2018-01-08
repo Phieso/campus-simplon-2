@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <title>random vote !</title>
+    <link href="https://fonts.googleapis.com/css?family=Creepster|Saira+Extra+Condensed" rel="stylesheet">
+    <script src="random.js"></script>
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .halloween {
+            font-family: 'Saira Extra Condensed', sans-serif;
+            font-family: 'Creepster', cursive;
+            color: #fffef8;
+            background: url('img/thriller2.gif');
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .halloween .simploniens .student {
+            color: #ff8000;
+        }
+
+        .halloween .btn {
+            background: #ff8000;
+        }
+
+        .halloween .btn:hover {
+            color: #ffc500;
+            text-shadow: 0 0 0.2px black;
+        }
+
+        body {
+            align-items: flex-start;
+            background-repeat: no-repeat;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            font-family: Avenir;
+            font-size: 16px;
+            height: 100vh;
+            justify-content: center;
+            overflow-x: hidden;
+            padding-left: 7vw;
+            width: 100vw;
+        }
+
+        .transparent-box {
+            text-shadow: 0.1px 0.48px 3.23px #525252;
+            background: rgba(255, 255, 255, 0.35);
+            box-shadow: 0px 0px 5px #525252;
+        }
+
+        .title {
+            font-weight: bold;
+            font-size: 1.55rem;
+            text-shadow: 0.1px 0.48px 3.23px #525252;
+            background: none;
+        }
+
+        .no-select {
+            cursor: default;
+        }
+
+        .btns.yes.no {
+            justify-content: space-around;
+            display: flex;
+            width: 100%;
+            max-width: 220px
+        }
+
+        .btn.mini {
+            max-width: 64px;
+            margin-bottom: 0;
+            height: 64px;
+            border-radius: 50%;
+            box-shadow: 0px 0.5px 1px #525252;
+        }
+
+        .btn {
+            color: inherit;
+            font-family: inherit;
+            font-size: 1.1rem;
+            border-radius: .3rem;
+            background: dodgerblue;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all .5s ease-in-out;
+            border: 1px solid rgba(192, 192, 192, 0.7);
+            width: 220px;
+            height: 50px;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .btn:hover {
+            color: orange;
+        }
+
+        .simploniens {
+            border: 1px solid;
+            display: inline-block;
+            list-style: none;
+            height: 40px;
+            line-height: 40px;
+            overflow: hidden;
+            width: 220px;
+            text-align: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .simploniens .student {
+            text-shadow: 0.1px 0.48px 0.23px #000000;
+            color: #1e90ff;
+            transition: color 1s linear;
+            font-size: 1.13rem;
+            font-weight: bold;
+        }
+
+        .simploniens.fade .student {
+            color: white;
+        }
+
+        @keyframes move_list {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-440px);
+            }
+        }
+        .simploniens.animate .student {
+            animation: linear 0s infinite alternate move_list;
+            animation-duration: 2.3s ;
+        }
+
+        #content {
+            font-size: 1.1rem;
+            font-weight: bold;
+            border: 2px dashed;
+            height: 40px;
+            justify-content: center;
+            align-items: center;
+            width: 220px;
+            display: flex;
+            margin: 10px 0;
+            transition: font-size .1s ease-in;
+        }
+
+        #content.is-result {
+            font-size: 1.3rem;
+            transition: font-size .5s linear;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="title">new HelloWorld()</h1>
+    <button id="random" class="btn">random vote !</button>
+    <div id="content" class="transparent-box no-select">Who's next ?!</div>
+    <ul id="list" class="simploniens transparent-box no-select"></ul>
+    <button id="yesno" class="btn">yes || no</button>
+    <div class="btns yes no">
+        <span id="yes" class="btn mini">yes</span>
+        <span id="no" class="btn mini">no</span>
+        <span id="reset" class="btn mini">reset</span>
+    </div>
+    <audio id="audio_win" src="audio/"></audio>
+</body>
+</html>

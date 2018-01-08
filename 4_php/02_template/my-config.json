@@ -14,7 +14,7 @@
         "home": {
             "title": "hello template",
             "html": "pages/home.php",
-            "mods": []
+            "mods": ["carrousel"]
         },
         "about": {
             "title": "à propos",
@@ -24,22 +24,22 @@
         "contact": {
             "title": "contactez-nous",
             "html": "pages/contact.php",
-            "mods": []
+            "mods": ["contact"]
         },
         "sync_async": {
             "title": "Sync vs Async",
             "html": "pages/sync_async.php",
-            "mods": ["personnages"]
+            "mods": ["personnages", "cafes"]
         },
         "maps": {
             "title": "google maps",
             "html": "pages/maps.php",
-            "mods": []
+            "mods": ["maps"]
         },
         "musique": {
             "title": "musique",
             "html": "pages/musique.php",
-            "mods": []
+            "mods": ["musique"]
         },
         "profil": {
             "title": "dashboard",
@@ -61,22 +61,13 @@
     "css": [
         "node_modules/font-awesome/css/font-awesome.min.css",
         "styles/styles.css",
-        "modules/personnages/persos.css",
-        "modules/maps/maps.css",
         "modules/navbar/navbar.css",
-        "modules/burger/burger.css",
-        "modules/carrousel/carrousel.css"
+        "modules/burger/burger.css"
     ],
     "js": [
-        "js/app.js",
         "js/dom.js",
-        "modules/maps/maps.js",
-        "modules/cafes/cafes.js",
-        "modules/contact/contact.js",
-        "modules/personnages/persos.js",
         "modules/burger/burger.js",
-        "modules/carrousel/carrousel.js",
-        "modules/navbar/navbar.js",
-        "js/ajax.js"
+        "js/ajax.js",
+        "js/app.js"
     ]
 }

@@ -12,5 +12,3 @@
     <span>page-ajax/page-ajax.js</span><br>
     <span>[ page-ajax/page-ajax.css ]</span><br>
 </p>
-
-<?php include("modules/personnages/persos.html"); ?>

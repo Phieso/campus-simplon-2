@@ -15,10 +15,6 @@ var random = (function random() {
             absent: false
         },
         {
-            nom: "Cédric",
-            absent: false
-        },
-        {
             nom: "Denis",
             absent: false
         },
@@ -81,11 +77,7 @@ var random = (function random() {
         {
             nom: "Sabuj",
             absent: false
-        },
-        {
-            nom: "Sophie",
-            absent: false
-        },
+        }
     ],
     copieSimploniens = simploniens.slice(),
     sounds = ["win1.mp3", "win2.mp3", "win3.mp3"];

@@ -14,8 +14,9 @@
             <th class="update">
                 <span>update</span>
           </th>
-            <th class="delete">
+            <th class="delete f-row">
                 <input type="submit" id="delete_bills" value="delete" class="tabler-btn">
+                <input type="submit" id="check_bills" value="select *" class="tabler-btn">
             </th>
           </tr>
         </thead>

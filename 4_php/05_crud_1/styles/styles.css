@@ -72,12 +72,24 @@ p:empty {
 table {
   border-collapse: collapse;
 }
+th {
+  height: 62px;
+}
+td {
+  height: 42px;
+}
 td, th {
   border: 2px solid black;
-  height: 42px;
   width: 42px;
   padding: 8px;
   text-align: center;
+}
+th.delete {
+  width: auto;
+  justify-content: center;
+}
+th.delete .tabler-btn:first-of-type {
+  margin-right: 10px;
 }
 a {
     color: inherit;

@@ -1,6 +1,8 @@
 <?php
 
 $db = connectDB("127.0.0.1", "base_test_1", "root", "@mysql");
+// localhost , nom_bdd, "root", ""
+// localhost , nom_bdd, "root", "root"
 
 function getUser($id) {
   global $db;

@@ -14,9 +14,10 @@ $base_url = "http://localhost/~guillaumeamg/campus-simplon-2/4_php/05_crud_1/";
 // au chargement de la page
 // on récupère tous les utilisateurs stockés en bdd
 $users = getUsers();
+// debug($users, 1);
 // on récupère toutes les factures stockées en bdd
 $bills = getBills();
-
+// debug($bills, 1);
 /*
   ##### Logique de l'application (SYNCHRONE) #####
   on utilise les verbes HTTP get ou post pour

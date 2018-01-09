@@ -19,5 +19,12 @@ if (isset($_POST["action"])) {
 
     } elseif ($_POST["action"] === "get_user") {
         echo json_encode(getUser($_POST["id"]));
+
+    } elseif ($_POST["action"] === "update_bill") {
+        echo json_encode(updateBill(
+          $_POST["id_bill"],
+          $_POST["total"],
+          $_POST["created_at"])
+        );
     }
 }

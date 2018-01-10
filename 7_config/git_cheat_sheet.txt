@@ -1,0 +1,6 @@
+# Supprimer tous les fichiers .gitignore déjà poussés sur le repository en ligne.
+
+git rm -r --cached .
+git add .
+git commit -m 'Removed all files that are in the .gitignore'
+git push origin master

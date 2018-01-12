@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS - TP Variables</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="./node_modules/vue/dist/vue.js"></script>
+    <script>
+        window.onload = function start() {
+
+            var ex1 = new Vue({
+                el: "#exercice_1",
+                data: {
+                    title: "Vue JS - TP Variables",
+                    user: {
+                      nom: "Guillaume",
+                      age: 37
+                    },
+                    img: {
+                        url:  "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Fractal_Broccoli.jpg/220px-Fractal_Broccoli.jpg",
+                        alt: "une jolie fractale"
+                    }
+                },
+                computed: {
+                    getRandom: function() {
+                        return Math.floor(Math.random() * 100) / 100;
+                    }
+                }
+            });
+
+            var ex2 = new Vue({
+              el: "#exercice_2",
+              data: {
+                searchString: "",
+                states : [
+                  "ALABAMA",
+                  "ALASKA",
+                  "ARIZONA",
+                  "ARKANSAS",
+                  "CALIFORNIE",
+                  "CAROLINE DU NORD",
+                  "CAROLINE DU SUD",
+                  "COLORADO",
+                  "CONNECTICUT",
+                  "DAKOTA DU NORD",
+                  "DAKOTA DU SUD",
+                  "DELAWARE",
+                  "COLUMBIA",
+                  "FLORIDE",
+                  "GÉORGIE",
+                  "HAWAÏ",
+                  "IDAHO",
+                  "ILLINOIS",
+                  "INDIANA",
+                  "IOWA",
+                  "KANSAS",
+                  "KENTUCKY",
+                  "LOUISIANE",
+                  "MAINE",
+                  "MARYLAND",
+                  "MASSACHUSETTS",
+                  "MICHIGAN",
+                  "MINNESOTA",
+                  "MISSISSIPPI",
+                  "MISSOURI",
+                  "MONTANA",
+                  "NEBRASKA",
+                  "NEVADA",
+                  "NEW HAMPSHIRE",
+                  "NEW JERSEY",
+                  "NOUVEAU-MEXIQUE",
+                  "NEW YORK",
+                  "OHIO",
+                  "OKLAHOMA",
+                  "ORÉGON",
+                  "PENNSYLVANIE",
+                  "RHODE ISLAND",
+                  "TENNESSEE",
+                  "TEXAS",
+                  "UTAH",
+                  "VERMONT",
+                  "VIRGINIE",
+                  "WASHINGTON",
+                  "VIRGINIE-OCCIDENTALE",
+                  "WISCONSIN",
+                  "WYOMING"
+                ]
+              },
+              created() {
+                this.statesBis = this.states
+              },
+              computed: {
+                filteredStates() {
+                  // parcourir le tableau des états avec un filtre
+                  return this.states.filter(function(s) {
+                    // retourner uniquement les états qui une fois mis en minuscule
+                    // corresponde au v-model de recherche, lié au champs input
+                    return s.toLowerCase().match(this.searchString)
+                  }, this);
+                }
+              },
+              methods: {
+                filterStates() {
+                  return this.states.filter(function(s) {
+                    return s.toLowerCase().match(this.searchString)
+                  }, this);
+                }
+              }
+            });
+
+        };
+    </script>
+</head>
+<body>
+    <div id="exercice_1">
+      <!-- 0/ Afficher le titre de la page en utilisant l'interpolation de chaîne -->
+      <h1 class="title">{{ title }}</h1>
+      <!-- 1/ remplir un <p> avec vos nom ET âge en utilisant l'interpolation de chaîne -->
+      <p>
+        l'user se nomme {{user.nom}}<br>
+        et est âgé de {{user.age}} ans
+      </p>
+      <!--  2/ afficher votre âge multiplié par 3 -->
+      <input type="text" v-model="user.nom">
+      <p>
+        si l'user était trois fois plus vieux, <br>
+        il aurait : {{user.age * 3}} ans !
+      </p>
+      <!--  3/ appeler une fonction pour afficher un nombre compris entre 0 et 1 -->
+      <p>
+        Nombre aléatoire en 0 et 1 => {{ getRandom }}
+      </p>
+      <!--  4/ afficher une image de votre choix en utilisant un bind sur l'attribut "src" -->
+      <h2 class="title">Une jolie fractale !</h2>
+      <img :src="img.url" :alt="img.alt">
+      <!--  5/ remplir un input texte avec votre nom en bindant sur l'attribut "value" -->
+      <hr>
+      <br>
+      <input type="text" :value="user.nom" class="input">
+    </div>
+
+    <div id="exercice_2">
+      <h2 class="title">Filtre états !</h2>
+      <!-- Dans un composant Vue, lister les états des états-unis d'amérique. -->
+      <!-- Implanter un input texte : à chaque event input dans ce champs, filter les états correspondants à la saisie -->
+      <input type="text" placeholder="filtrer la liste" class="input" v-model="searchString">
+      <ul class="list">
+        <!-- <li v-for="s in filteredStates">
+          {{ s.toLowerCase() }}
+        </li> -->
+        <li v-for="s in filterStates()">
+          {{ s.toLowerCase() }}
+        </li>
+      </ul>
+    </div>
+</body>
+
+</html>

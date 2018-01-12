@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS - TP Events simples</title>
+</head>
+
+<body>
+    <div id="exercice-2">
+        <!--  1/ afficher une alerte au click sur ce bouton -->
+        <div>
+            <button>show alert</button>
+        </div>
+        <!--  2/ écouter les events "keydown" et stocker la valeur du champs texte dans une prop de data -->
+        <div>
+            <input type="text">
+            <p>{{ value }}</p>
+        </div>
+        <!--  3/ implanter l'exo 2 de façon à ce que l'event ne soit déclenché que si la touche enter est pressée (voir la doc de vue.js )-->
+        <div>
+            <input type="text">
+            <p>{{ value }}</p>
+        </div>
+        <!--  4/ Créer un bouton toggle.
+        a - Au click, un élément masqué au départ apparaît.
+        b - Appliquer une transition CSS sur le détail produit.
+        c - changer le texte du bouton en "masquer détails"
+        -->
+        <div>
+            <button class="btn">voir détails</button>
+            <p>Les détails de ce produit sont masquées...</p>
+            <p>
+                <h2>T-shirt</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                </p>
+                <p>
+                    prix: {{ prixTshirt }}
+                </p>
+            </p>
+        </div>
+        <!--  5 Au click sur le submit, ajouter la valeur du champs texte dans un tableau todos.
+        Boucler sur ce tableau pour afficher tous les éléments dans une liste non ordonnée.
+        Si todos est vie, afficher un message dans le p-->
+        <div>
+            <input type="text">
+            <input type="submit" value="ajouter todo">
+            <hr>
+            <p>pas de todos pour le moment</p>
+            <ul class="toto-list">
+                <li></li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

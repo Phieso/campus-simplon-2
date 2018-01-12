@@ -1,0 +1,22 @@
+{
+  "name": "install-via-npm",
+  "version": "1.0.0",
+  "description": "un petit topo sur npm",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "vuejs",
+    "-",
+    "js",
+    "-",
+    "simplon"
+  ],
+  "author": "guillaume@owlab.io",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.3.3",
+    "font-awesome": "^4.7.0"
+  }
+}

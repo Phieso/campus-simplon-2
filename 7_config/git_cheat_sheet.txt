@@ -1,3 +1,7 @@
+# annuler les fichier ajouter avec git add .
+git reset .
+
+
 # Supprimer tous les fichiers .gitignore déjà poussés sur le repository en ligne.
 
 git rm -r --cached .

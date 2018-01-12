@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="nodes_modules/font-awesome/css/font-awesome.min.css">
+    <script src="nodes_modules/vue/dist/vue.min.js"></script>
+    <style>
+    body {
+        font-family: Avenir;
+        font-size: 16px;
+    }
+    .title {
+        color: dodgerblue;
+        font-size: 1.3rem;
+    }
+    .input[type=text] {
+        box-shadow: 0px 0.1px 2px 0.9px #696666;
+        border: none;
+        padding: 5px 10px 5px 20px;
+    }
+    .btn {
+        align-items: center;
+        background-color: transparent;
+        border: 1px solid;
+        border-radius: .3rem;
+        cursor: pointer;
+        display: inline-flex;
+        height: 32px;
+        justify-content: center;
+        min-width: 120px;
+    }
+    .btn:hover {
+        color: white;
+        background-color: dodgerblue;
+    }
+    p {
+        box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+        border-radius: .1rem;
+        max-width: 400px;
+        padding: 10px;
+        text-align: justify;
+    }
+    p:empty {
+        display: none;
+    }
+    table {
+      border-collapse: collapse;
+    }
+    td {
+      border: 2px solid black;
+      height: 42px;
+      width: 42px;
+      text-align: center;
+    }
+    td:nth-child(odd) {
+      background: dodgerblue;
+      color: white;
+    }
+    </style>
+</head>
+<body>
+    <h1 class="title">Installation des modules via NPM</h1>
+    <p>
+        on initialise un projet nodejs avec la commande
+        <code>npm init</code>.<br>
+        un fichier de configuration package.json est généré. <br>
+        Ce fichier est le patron, le plan, de chaque projet. Il permet de stocker des modules et leurs versions, des scripts, etc...
+    </p>
+    <p>
+        un fois le projet initialisé, on peut installer des modules avec la commande
+        <code>npm install nom-du-module</code>. <br>
+        Par exemple : <code>(sudo) npm install vue</code>.
+    </p>
+    <p>
+        Ce fichier json est exportable, il permet de distribuer votre app facilement, par exemple via github.
+    </p>
+</body>
+</html>

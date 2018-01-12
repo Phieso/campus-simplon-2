@@ -1,0 +1,14 @@
+{
+  "name": "35.2-premiere-approche",
+  "version": "1.0.0",
+  "description": "yolo",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "guillaume@owlab.io",
+  "license": "MIT",
+  "dependencies": {
+    "vue": "^2.5.13"
+  }
+}

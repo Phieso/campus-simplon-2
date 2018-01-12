@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <script src="./node_modules/vue/dist/vue.min.js"></script>
+  <title>VueJS Rocks !!!</title>
+  <script>
+    window.addEventListener("DOMContentLoaded", function() {
+      var app = new Vue({
+        el: "#app_vue_1",
+        data: {
+          chat: {
+            nom: "kitty",
+            couleur: "noir",
+            age: 10
+          },
+          utilisateurs: [
+            {langue:"Khmer",first_name:"Ottilie",last_name:"Pinchin"},
+            {langue:"Danish",first_name:"Shaw",last_name:"Hymor"},
+            {langue:"Kazakh",first_name:"Lotta",last_name:"Hacket"},
+            {langue:"Afrikaans",first_name:"Jenda",last_name:"Beecham"},
+            {langue:"Afrikaans",first_name:"Cherilyn",last_name:"Thaxter"},
+            {langue:"Punjabi",first_name:"Kennan",last_name:"Corzor"},
+            {langue:"Kannada",first_name:"Cecilius",last_name:"De Fries"},
+            {langue:"Korean",first_name:"Barny",last_name:"Doog"},
+            {langue:"Albanian",first_name:"De",last_name:"McGrey"},
+            {langue:"Hiri Motu",first_name:"Rurik",last_name:"Feaveer"}
+          ],
+          nomUtilisateur: "",
+          titre: "Que la vie est belle avec les frameworks !!!",
+          compteur: 0,
+          chaussures: [
+            "sneakers nike",
+            "sandale chose",
+            "crocs",
+            "espadrille",
+            "boots timberland",
+            "adidas stan smith"
+          ]
+        },
+        methods: {
+          increment: function() {
+            this.compteur += 100;
+          },
+          decrement: function() {
+            this.compteur = (this.compteur - 100 >= 0) ? this.compteur -= 100 : 0;
+          },
+          ajusterValeur: function(e) {
+            this.compteur = Number(e.target.value);
+          }
+        }
+      });
+      console.log("ma première app VueJS => ");console.log(app);
+    })
+  </script>
+</head>
+<body>
+    <div id="app_vue_1">
+      <h1 class="title">hello people !</h1>
+      <h2 class="title"> {{ titre }} </h2>
+
+      <p>mon compteur vaut : {{ compteur }}</p>
+
+      <p v-if="compteur >= 500">
+          <span>Waaa le grand nombre t'as vu !</span>
+      </p>
+      <p v-else>
+          <span>Mouais c'est un tout pti nombre ça ...</span>
+      </p>
+      <p>
+        <!-- par convention (Vue) on accède à l'objet event avec la var $event -->
+        <input type="range" @input="ajusterValeur($event)"
+        min="0" max="1000" step="100" value="0">
+
+        <button class="btn" v-on:click="increment($event)">
+            incrémenter !
+        </button>
+
+        <button class="btn" v-on:click="decrement()">
+            décrémenter !
+        </button>
+      </p>
+      <hr>
+      <h2 class="title">Nom de l'utilisateur:</h2>
+      <input type="text" v-model="nomUtilisateur">
+      <p>{{ nomUtilisateur }}</p>
+      <hr>
+      <h2 class="title">Lister des chaussures</h2>
+      <ul class="list">
+        <!-- à droite du "in", l'array chaussures, à gauche une variable -->
+        <!-- le nom de la variable choisie, n'a pas d'importance -->
+        <li v-for="pouet in chaussures">
+          {{ pouet }}
+        </li>
+      </ul>
+      <hr>
+      <h2 class="title">Mini TP !</h2>
+      <p>Creer un tableau d'objets de votre choix.<br>
+      Chaque objet contient les mêmes propriétés (valeurs différentes).<br>
+      Afficher chaque objet dans une liste ordonnée avec une boucle v-for.<br>
+      Afficher les différentes propriétés de chaque objet !</p>
+      <hr>
+      <ul class="list">
+        <!-- à droite du "in", l'array chaussures, à gauche une variable -->
+        <!-- le nom de la variable choisie, n'a pas d'importance -->
+        <li v-for="(u, i) in utilisateurs">
+          {{ i }}
+          <span v-for="(prop, key) in u">
+            {{ key }} - {{ prop }}
+          </span>
+        </li>
+      </ul>
+      <hr>
+      <p>
+        {{  chat.nom }}
+      </p>
+      <p>
+        {{  123 * 340000272727 > 2340 }}
+      </p>
+      <p>
+        Afficher le temps Unix now !!!<br>
+        {{  Date.now() }}
+      </p>
+      <p>
+        Vrai OU Faux ??!<br>
+        {{ true || false }}
+      </p>
+    </div>
+</body>
+</html>

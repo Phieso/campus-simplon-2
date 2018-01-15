@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Vue JS - Connect mySQL</title>
+    <script src="./node_modules/vue/dist/vue.min.js"></script>
+    <script src="appVue.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <h1 class="title">Connect mySQL</h1>
+    <h2 class="title">Dépendances du projet</h2>
+    <ul>
+      <li><a target="_blank" href="https://www.npmjs.com/package/vue">vue js</a></li>
+      <li><a target="_blank" href="https://github.com/mysqljs/mysql">mysql node</a></li>
+      <li><a target="_blank" href="http://expressjs.com/fr/">express js</a></li>
+      <li><a target="_blank" href="https://www.npmjs.com/package/nodemon">nodemon</a></li>
+    </ul>
+    <p>
+      préparer le projet avec npm init.<br>
+      puis en ligne de commande installer vue, express et le driver mysql pour node js.<br><br>
+      (sudo) npm install --save vue<br>
+      (sudo) npm install --save express<br>
+      (sudo) npm install --save node-mysql<br>
+      (sudo) npm install --save-dev nodemon<br>
+      <br>
+    </p>
+    <p>
+      Créer un fichier server.js au même niveau que votre index.html<br>
+      Dans ce fichier, placer un instruction pour afficher "hello world" dans la console.
+      Modifier la partie scripts du fichier package.json pour qu'elle ressemble à ceci :<br>
+    </p>
+    <pre>
+  "scripts": {
+    "server": "nodemon server.js"
+  }
+    </pre>
+    <p>
+      depuis un terminal, dans le dossier contenant l'index de ce projet, lancer la commande suivante : <br>
+    </p>
+    <pre>
+  npm run server
+    </pre>
+    <hr>
+    <div id="my_app">
+      <h2 class="title">Go mySQL !!!</h2>
+      <button class="btn"
+       @click="getVillesDeFrance('http://localhost:8001/villes-france')">
+         get departements de france
+       </button>
+      <hr>
+      <ul>
+        <li v-for="dept in villesFrance">
+          {{ dept.nom }} ( {{ dept.code }} )
+        </li>
+      </ul>
+    </div>
+</body>
+
+</html>

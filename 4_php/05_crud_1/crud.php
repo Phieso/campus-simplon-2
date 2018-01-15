@@ -1,4 +1,7 @@
 <?php
+
+// ag@todo : check autoload psr4 pour autoload dependances + namespaces
+
 // inclusion du fichier de fonctions utilitaires
 include_once "libs/utility.php";
 // inclusions des fonctions crud pour le module bills (factures)

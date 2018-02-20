@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - new tricks / Local Storage</title>
+    <script src="app.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+          font-family: Avenir;
+          font-size: 16px;
+      }
+      .title {
+          color: dodgerblue;
+          font-size: 1.3rem;
+      }
+      .input[type=text] {
+          box-shadow: 0px 0.1px 2px 0.9px #696666;
+          border: none;
+          padding: 5px 10px 5px 20px;
+          height: 32px;
+      }
+      .btn {
+          outline: none;
+          align-items: center;
+          background-color: transparent;
+          border: 1px solid;
+          border-radius: .3rem;
+          cursor: pointer;
+          display: inline-flex;
+          height: 32px;
+          justify-content: center;
+          min-width: 140px;
+          font-size: 1.1rem;
+          padding: 5px;
+      }
+      .btn:hover {
+          color: white;
+          background-color: dodgerblue;
+      }
+      p {
+          box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+          border-radius: .1rem;
+          max-width: 600px;
+          padding: 10px;
+      }
+      .is-hidden {
+        display: none;
+      }
+      #wrap_preview {
+        margin-top: 20px;
+      }
+      .tools {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 50%;
+        min-width: 320px;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="title">
+      <span>>New Tricks / </span>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Storage" target="_blank">Local Storage</a></h1>
+    <hr>
+
+    <div class="tools">
+      <input type="text" id="new_key" class="input" placeholder="clé de l'objet">
+      <input type="text" id="new_val" class="input" placeholder="valeur de l'objet">
+      <button id="btn_add_store" class="btn">ajouter au store</button>
+      <button id="btn_read_store" class="btn">lire le store</button>
+    </div>
+
+    <hr>
+
+    <p>
+      L'API LocalStorage introduit une technique pour créer de la persistance des données, <b>côté client</b>.<br><br>
+      Eventuellement complémentaire des bases de données, LocalStorage ne peut pas les remplacer.<br><br>
+      Cette technologie reste intéressante car pratique dans de nombreux <i>use cases</i> ...
+    </p>
+
+    <button id="btn_reveal" class="btn" >voir la suite</button>
+
+    <div id="wrap_preview" class="is-hidden">
+      <img src="jawad-predator.jpg" alt="some fun stuff">
+    </div>
+
+    <h2 class="title">DIY (à vous de jouer)</h2>
+    <p>
+      Coder un petit programme implantant l'API LocalStorage.<br>
+      A chaque load, stocker la date courante (JJ/MM/AA hh:mm) dans un store.<br>
+      Au chargement de la page, indiquer la date de dernière visite.<br>
+      Choisir d'implanter le programme en JS Vanille ou Vue (ou autre :).
+    </p>
+
+  </body>
+</html>

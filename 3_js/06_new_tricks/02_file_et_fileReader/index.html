@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - new tricks / File Object & FileReader</title>
+    <link rel="stylesheet" href="./css/fontawesome-all.css">
+    <script src="app.js"></script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+          font-family: Avenir;
+          font-size: 16px;
+      }
+      .title {
+          color: dodgerblue;
+          font-size: 1.3rem;
+      }
+      .input[type=text] {
+          box-shadow: 0px 0.1px 2px 0.9px #696666;
+          border: none;
+          padding: 5px 10px 5px 20px;
+          height: 32px;
+      }
+      .btn {
+          outline: none;
+          align-items: center;
+          background-color: transparent;
+          border: 1px solid;
+          border-radius: .3rem;
+          cursor: pointer;
+          display: inline-flex;
+          height: 32px;
+          justify-content: center;
+          min-width: 140px;
+          font-size: 1.1rem;
+          padding: 5px;
+      }
+      .btn:hover {
+          color: white;
+          background-color: dodgerblue;
+      }
+      p {
+          box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
+          border-radius: .1rem;
+          max-width: 600px;
+          padding: 10px;
+      }
+      table, td {
+        border-collapse: collapse;
+      }
+      table td {
+        border: solid;
+        padding: 7px;
+      }
+      .is-hidden {
+        display: none;
+      }
+      .tools {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        max-width: 50%;
+        min-width: 320px;
+      }
+      #img_wrap {
+        margin-top: 20px;
+        max-width: 320px;
+      }
+      #img_wrap img {
+        display: block;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+
+    <h1 class="title">
+      <span>New Tricks / Objets </span>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/File" target="_blank">File</a>
+      <span>&</span>
+      <a href="https://developer.mozilla.org/fr/docs/Web/API/FileReader" target="_blank">FileReader</a>
+    </h1>
+
+    <hr>
+
+    <div class="tools">
+      <button id="btn_open_file" class="btn">charger des fichers</button>
+    </div>
+
+    <hr>
+
+    <!--  noter l'utilisation de l'attribute multiple sur l'input file-->
+    <input id="file_input" type="file" class="is-hidden" multiple>
+
+    <p>
+      Travailler avec des fichiers, c'est fun ! (et/ou casse tête)<br>
+      Les objets File et FileReader permettent de récupérer des fichiers
+      sur le système d'exploitation <b>hôte</b> du <b>client</b>, pour les intégrer à un formulaire ou un script.<br>
+      Utile pour les <b>uploader</b> vers un serveur ou les éditer en local.<br>
+      Encore un tricks à connaître !
+    </p>
+
+    <table id="file_list">
+      <tbody></tbody>
+    </table>
+
+    <div id="img_wrap">
+      <img id="img_preview" src="" alt="">
+    </div>
+
+    <h2 class="title">DIY (#1hdecode )</h2>
+    <p>
+      Idéalement, utiliser un fichier de test assez lourd (vidéo de 200/300mo).<br>
+      Implanter un FileReader pour créer un widget de type <i>progress-bar</i>.<br>
+      Le widget indique la progression du chargement d'un fichier par le navigateur.<br>
+      Pour cela, trouver l'écouteur d'évènements approprié.
+    </p>
+    <h3>Dissocier les problèmes</h3>
+    <ol>
+      <li>HTML/Event JS pour choisir un fichier</li>
+      <li>HTML/CSS pour animer la progress-bar</li>
+      <li>File + FileReader + events récupérer les valeurs de l'animation (de 0 à 100%)</li>
+    </ol>
+  </body>
+</html>

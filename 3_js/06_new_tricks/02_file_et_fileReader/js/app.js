@@ -2,7 +2,7 @@
 const fileObjectApp = (function fileObjectApp() {
   "use strict";
 
-  var dom = {}, files;
+  var bars = [], dom = {}, files;
 
   /*
     ##################################
@@ -11,7 +11,9 @@ const fileObjectApp = (function fileObjectApp() {
   const displayFiles = (fileList) => {
 
     Array.from(fileList).forEach((f, i) => {
-      console.log(f);
+
+      // param ci-dessous : file, index, élement parent des progress-bars
+      const bar = new ProgressBar(f, i, dom.bars);
       dom.fileList.innerHTML += `<tr>
         <td>${ f.name }</td>
         <td>${ f.type }</td>
@@ -23,17 +25,19 @@ const fileObjectApp = (function fileObjectApp() {
     });
 
     dom.fileList.querySelectorAll(".btn").forEach(btn => {
-      btn.onmouseenter = showPreview;
+      // btn.onmouseenter = showPreview;
+      btn.onclick = showPreview;
     });
   };
 
   const handleDOMEvents = () => {
+
     dom.btnOpen.onclick = e => {
       dom.inputFile.click();
     };
+
     dom.inputFile.onchange = e => {
       files = e.target.files || e.srcElement.files;
-      console.log(files);
       displayFiles(files);
     };
   };
@@ -46,31 +50,35 @@ const fileObjectApp = (function fileObjectApp() {
   };
 
   const setDOMElements = () => {
+    dom.bars = document.getElementById("my_progress_bars");
     dom.btnOpen = document.getElementById("btn_open_file");
     dom.inputFile = document.getElementById("file_input");
     dom.imgPreview = document.getElementById("img_preview");
+    dom.vidPreview = document.getElementById("vid_preview");
     dom.fileList = document.getElementById("file_list").children[0];
     dom.views = dom.fileList.getElementsByClassName("fa-eye");
   };
 
   const showPreview = (e) => {
+    const reader = new FileReader();
     const target = e.target || e.srcElement;
-    const reader =  new FileReader();
-    const targetFile = files[target.getAttribute("data-key")];
+    const key = Number(target.getAttribute("data-key"));
+    const targetFile = files[key];
 
-    reader.onload = e => {
-      const target = e.target || e.srcElement;
-      dom.imgPreview.src = target.result;
-    };
+    if (targetFile.type.match("video")) {
 
-    reader.onprogress = e => {
-      console.log("progress");
-      console.log(e);
-    };
+        dom.vidPreview.src = (URL || webkitURL).createObjectURL(targetFile);
+        dom.vidPreview.load();
 
-    console.log(targetFile);
-    reader.readAsDataURL(targetFile);
-    // reader.readAsArrayBuffer(targetFile);
+    } else if (targetFile.type.match("image")) {
+
+        reader.onload = e => {
+          const target = e.target || e.srcElement;
+          dom.imgPreview.src = target.result;
+        };
+
+        reader.readAsDataURL(targetFile);
+    }
   };
 
   /*

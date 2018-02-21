@@ -5,76 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>JS - new tricks / File Object & FileReader</title>
+    <link rel="stylesheet" href="./css/styles.css">
     <link rel="stylesheet" href="./css/fontawesome-all.css">
-    <script src="app.js"></script>
-    <style>
-      * {
-        box-sizing: border-box;
-      }
-      body {
-          font-family: Avenir;
-          font-size: 16px;
-      }
-      .title {
-          color: dodgerblue;
-          font-size: 1.3rem;
-      }
-      .input[type=text] {
-          box-shadow: 0px 0.1px 2px 0.9px #696666;
-          border: none;
-          padding: 5px 10px 5px 20px;
-          height: 32px;
-      }
-      .btn {
-          outline: none;
-          align-items: center;
-          background-color: transparent;
-          border: 1px solid;
-          border-radius: .3rem;
-          cursor: pointer;
-          display: inline-flex;
-          height: 32px;
-          justify-content: center;
-          min-width: 140px;
-          font-size: 1.1rem;
-          padding: 5px;
-      }
-      .btn:hover {
-          color: white;
-          background-color: dodgerblue;
-      }
-      p {
-          box-shadow: -0.9px 0.1px 6.1px 0.2px #696666;
-          border-radius: .1rem;
-          max-width: 600px;
-          padding: 10px;
-      }
-      table, td {
-        border-collapse: collapse;
-      }
-      table td {
-        border: solid;
-        padding: 7px;
-      }
-      .is-hidden {
-        display: none;
-      }
-      .tools {
-        display: flex;
-        align-items: flex-start;
-        justify-content: space-between;
-        max-width: 50%;
-        min-width: 320px;
-      }
-      #img_wrap {
-        margin-top: 20px;
-        max-width: 320px;
-      }
-      #img_wrap img {
-        display: block;
-        width: 100%;
-      }
-    </style>
+    <script src="./js/progress-bar.js"></script>
+    <script src="./js/app.js"></script>
   </head>
   <body>
 
@@ -108,8 +42,14 @@
       <tbody></tbody>
     </table>
 
+    <div id="my_progress_bars"></div>
+
     <div id="img_wrap">
       <img id="img_preview" src="" alt="">
+    </div>
+
+    <div id="vid_wrap">
+      <video id="vid_preview" src="" alt="" controls>
     </div>
 
     <h2 class="title">DIY (#1hdecode )</h2>
@@ -119,11 +59,13 @@
       Le widget indique la progression du chargement d'un fichier par le navigateur.<br>
       Pour cela, trouver l'écouteur d'évènements approprié.
     </p>
-    <h3>Dissocier les problèmes</h3>
+
+    <h3 class="title">Dissocier les problèmes</h3>
     <ol>
       <li>HTML/Event JS pour choisir un fichier</li>
       <li>HTML/CSS pour animer la progress-bar</li>
       <li>File + FileReader + events récupérer les valeurs de l'animation (de 0 à 100%)</li>
     </ol>
+
   </body>
 </html>

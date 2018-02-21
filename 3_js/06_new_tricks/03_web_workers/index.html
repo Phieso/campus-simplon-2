@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JS - new tricks / WebWorkers</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="./app.js"></script>
+  </head>
+  <body>
+
+    <h1 class="title">
+      <span>New Tricks / </span>
+      <a href="https://developer.mozilla.org/en-US/docs/Web/API/Worker" target="_blank">Web Workers</a>
+    </h1>
+
+    <hr>
+
+    <div class="tools">
+      <div class="btns">
+        <button id="btn_calcul_1" class="btn" onclick="appWorker.doThreadBusy()">lancer calcul lourd &nbsp; <span class="error">(bad)</span></button>
+        <button id="btn_calcul_2" class="btn" onclick="appWorker.doWorkerBusy()">lancer calcul lourd &nbsp; <span class="success">(good)</span></button>
+        <button id="btn_calcul_3" class="btn" onclick="appWorker.doAnimation()">lancer animation</button>
+        <button id="btn_calcul_3" class="btn" onclick="appWorker.getParisData()">get data@Paris</button>
+      </div>
+      <div id="demo_block" class="block"></div>
+    </div>
+
+    <hr>
+
+    <p>
+      JS est mono-thread, c'est à dire que le langage fonctionne avec un cycle uniquement d'exécution.<br>
+      Enfin, ça c'est ce que les détracteurs de JS diront... <br>Sans connaître le tricks des Workers !<br>
+      En effet, il vous est possible de créer autant de threads que nécessaire, en invoquant des objets web workers.
+    </p>
+
+    <ul class="list">
+        <li><a target="_blank" href="https://developer.mozilla.org/fr/docs/Utilisation_des_web_workers">Use cases</a></li>
+        <li><a target="_blank" href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Functions_and_classes_available_to_workers">Fonctions associées</a></li>
+    </ul>
+
+    <h2 class="title">DIY (#motivation!!!)</h2>
+    <p>
+      RDV sur cette  <a href="https://opendata.paris.fr/explore/dataset/comptages-routiers-permanents/api/" target="_blank">page</a>.<br>
+      Rédiger un programme implantant un web worker pour récupérer 10k lignes de cette base de données... Et ce sans bloquer l'UI !!!.
+    </p>
+
+  </body>
+</html>

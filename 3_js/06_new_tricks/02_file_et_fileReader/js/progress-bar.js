@@ -6,6 +6,7 @@ const ProgressBar = function ProgressBar(f, index, target) {
   this.file = f;
   this.reader = new FileReader();
   this.reader.onprogress = this.setValue.bind(this);
+  this.reader.onload = this.setValue.bind(this);
   this.reader.readAsDataURL(this.file);
 };
 
@@ -28,7 +29,7 @@ ProgressBar.prototype.createBarCustom = function createBarCustom(index) {
   progress.id = "bar_" + index;
   bar.classList.add("bar");
   hint.classList.add("hint");
-  // insertion des sous éléments de la bar
+  // insertion des sous-éléments de la bar
   bar.appendChild(hint);
   progress.appendChild(bar);
   // retour de la bar constituée

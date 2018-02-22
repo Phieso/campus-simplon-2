@@ -30,9 +30,10 @@
     <hr>
 
     <p>
-      JS est mono-thread, c'est à dire que le langage fonctionne avec un cycle uniquement d'exécution.<br>
+      JS est mono-thread, c'est à dire que le langage fonctionne avec un fil unique d'exécution (thread).<br>
       Enfin, ça c'est ce que les détracteurs de JS diront... <br>Sans connaître le tricks des Workers !<br>
-      En effet, il vous est possible de créer autant de threads que nécessaire, en invoquant des objets web workers.
+      En effet, il vous est possible de créer autant de threads que nécessaire, en invoquant des objets web workers.<br>
+      Attention cependant : les workers n'ont pas accès au DOM. En revanche, ils ont accès à XHR et communiquent avec le thread parent par un système de messages.
     </p>
 
     <ul class="list">

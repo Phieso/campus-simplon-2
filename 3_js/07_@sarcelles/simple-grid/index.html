@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: Avenir;
+    }
+    #my_grid {
+      display: grid;
+      height: 100vh;
+      grid-template-columns: 25% 25% 25% 25%;
+      grid-template-rows:  25% 25% 25% 25%;
+      grid-row-gap: 10px;
+      grid-column-gap: 10px;
+    }
+    #my_grid div {
+      background: silver;
+    }
+    #my_grid .is-active {
+      background: orange;
+      grid-column-end: 4;
+      grid-column-start: 2;
+      grid-row-end: 3;
+      grid-row-start: 1;
+    }
+  </style>
+</head>
+<body>
+  <h1 class="title">Une simple Grid CSS</h1>
+  <div id="my_grid">
+      <div class="is-active"></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+  </div>
+</body>
+</html>

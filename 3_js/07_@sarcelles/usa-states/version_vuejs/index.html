@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="styles.css">
+  <title>Etats USA</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue" await></script>
+  <script src="app.js" await></script>
+</head>
+<body>
+  <div id="states_usa">
+    <h1 class="title">Avec VueJS    (<a href="../">version Native ici</a>)</h1>
+    <hr>
+    <input type="text" id="input_filter" @input="filterStates($event)"
+    class="input" placeholder="filtrer la liste ...">
+    <hr>
+    <ol id="list_states">
+      <li v-for="(state, key) in filteredStates" :key="key">
+        {{ state }}
+      </li>
+    </ol>
+  </div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+#board {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  perspective: 100vw;
+}
+#board .card {
+  backface-visibility: hidden;
+  flex: 0 0 24%;
+  height: 50%;
+  border: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform .5s linear;
+  transform: rotateY(0deg);
+  position: relative;
+  transform-style: preserve-3d;
+}
+#board .card.is-active {
+  transform: rotateY(180deg);
+}
+#board .card .front, #board .card .back {
+  backface-visibility: hidden;
+	position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+#board .card .front {
+  z-index: 2;
+  background: blue;
+	transform: rotateY(0deg);
+}
+#board .card .back {
+  background: red;
+  transform: rotateY(180deg);
+}

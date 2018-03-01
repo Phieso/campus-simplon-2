@@ -38,6 +38,7 @@ var appWorker = (function appWorker() {
 
       workerParis.addEventListener("message", (e) => {
           console.log("Message retourné par le worker Paris");
+          console.log(e);
           console.log(e.data);
       });
 

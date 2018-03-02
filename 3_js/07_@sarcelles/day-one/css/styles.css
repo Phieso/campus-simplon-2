@@ -108,3 +108,11 @@ p {
   color: firebrick;
   font-weight: bold;
 }
+
+/* Always set the map height explicitly to define the size of the div
+ * element that contains the map. */
+#map {
+  height: 450px;
+  width: 600px
+}
+

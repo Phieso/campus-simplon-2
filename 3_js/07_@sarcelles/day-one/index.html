@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="utf-8">
   <title>Mon premier objet JS !</title>
@@ -7,6 +8,7 @@
   <link rel="stylesheet" href="./css/styles.css">
   <link rel="stylesheet" href="./css/fontawesome-all.css">
 </head>
+
 <body>
   <header id="header_main">
     <span>header</span>
@@ -19,15 +21,38 @@
       </button>
       <nav id="nav_main">
         <ul class="list">
-          <li class="item" data-page="home"><a href="">home</a></li>
-          <li class="item" data-page="about"><a href="">about</a></li>
-          <li class="item" data-page="contact"><a href="">contact</a></li>
+          <li class="item" data-page="home">
+            <a href="">home</a>
+          </li>
+          <li class="item" data-page="about">
+            <a href="">about</a>
+          </li>
+          <li class="item" data-page="contact">
+            <a href="">contact</a>
+          </li>
         </ul>
       </nav>
     </aside>
     <main id="main_content">
       <h1 class="title">App Intro</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptatum molestiae, deserunt, laborum perferendis facilis facere tenetur possimus asperiores magnam eos molestias maxime quae ipsum a assumenda exercitationem, officiis! Ex!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt voluptatum molestiae, deserunt, laborum perferendis
+        facilis facere tenetur possimus asperiores magnam eos molestias maxime quae ipsum a assumenda exercitationem, officiis!
+        Ex!
+      </p>
+
+      <!-- <iframe
+      width="600"
+      height="450"
+      frameborder="0" style="border:0"
+      src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAjka-CceVYxYZ-SQpoSTFs7e38v_OBLpw
+        &q=Simplon,Montreuil+France" allowfullscreen>
+    </iframe> -->
+
+      <div id="map"></div>
+
+      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjka-CceVYxYZ-SQpoSTFs7e38v_OBLpw&callback=initMap"
+        async defer></script>
+
     </main>
   </div>
   <footer id="footer_main">
@@ -35,4 +60,5 @@
   </footer>
   <!-- header#header_main>span^aside#sidebar>h2.title+nav#nav>(ul.list>li.item*3)^main>h1.title+p^footer -->
 </body>
+
 </html>
